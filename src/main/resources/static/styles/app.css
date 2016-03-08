@@ -453,7 +453,8 @@ a {
 }
 .content {
     min-height: 100%;
-    padding: 90px 40px 40px;
+    /* padding: 90px 40px 40px; */
+    padding: 60px 20px 0px;
     background-color: #eee
 }
 @media (max-width: 767px) {
