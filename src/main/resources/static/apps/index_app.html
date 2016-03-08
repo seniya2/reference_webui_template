@@ -2,7 +2,7 @@
 <html ng-app="singApp">
 <head>
 	<meta charset="utf-8">
-	<title>Pasteur dashboard</title>
+	<title>reference_webui_template</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -10,8 +10,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<link rel="stylesheet" href="../styles/vendor.css">
 	<link rel="stylesheet" href="../styles/app.css">
-	<link rel="stylesheet" href="../scripts/angucomplete-alt-master/angucomplete-alt.css">	
-	<link rel="stylesheet" href="../styles/custom.css">
 	
 </head>
 <body ng-controller="App" sn-demo="" ng-class="{'nav-static': app.state['nav-static'], 'login-page': $state.is('login'), 'error-page': $state.is('error')}">
@@ -20,12 +18,10 @@
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
-	<div class="app" id="app" ui-view=""></div>
-	<!-- 
+	<div class="app" id="app" ui-view=""></div>	
 	<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-	 -->
-	<!-- LIB 1 -->
 	
+	<!-- LIB 1 -->	
 	<script type="text/javascript" src="../scripts/d3/d3.min.js"></script>
 	<script type="text/javascript" src="../scripts/nvd3/build/nv.d3.min.js"></script>		
 	<script type="text/javascript" src="../scripts/jquery/dist/jquery.min.js"></script>
@@ -79,7 +75,6 @@
 	<script type="text/javascript" src="../scripts/angular-datatables/dist/angular-datatables.min.js"></script>
 	<script type="text/javascript" src="../scripts/angular-datatables/dist/plugins/bootstrap/angular-datatables.bootstrap.min.js"></script>
 	<script type="text/javascript" src="../scripts/angular-summernote/dist/angular-summernote.min.js"></script>
-	<script type="text/javascript" src="../scripts/angular-nvd3-master/dist/angular-nvd3.js"></script>	
 	<script type="text/javascript" src="../scripts/widgster/widgster.js"></script>		
 	<script type="text/javascript" src="../scripts/rickshaw/rickshaw.min.js"></script>
 	<script type="text/javascript" src="../scripts/gmaps/gmaps.min.js"></script>
@@ -112,11 +107,6 @@
 	<script type="text/javascript" src="../scripts/seiyria-bootstrap-slider/dist/bootstrap-slider.min.js"></script>
 	<script type="text/javascript" src="../scripts/angular-bootstrap-slider-master/slider.js"></script>
 	
-	<!-- LIB 2 -->
-	<script type="text/javascript" src="../scripts/angularUtils-pagination/dirPagination.js"></script>
-	<script type="text/javascript" src="../scripts/angucomplete-alt-master/dist/angucomplete-alt.min.js"></script>
-	
-	 
 	<!-- DEV 1 -->
 	<script type="text/javascript" src="app/modules/core/core.module.js"></script>
 	<script type="text/javascript" src="app/modules/core/core.js"></script>
