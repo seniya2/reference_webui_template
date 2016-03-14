@@ -2,14 +2,14 @@
 	<section class="widget">
 		<header>
 			<h4>
-				<span class="fw-semi-bold">CRUD</span> 리스트
+				<span class="fw-semi-bold">{{"view.crud.list_title" | translate}}</span>
 			</h4>
 		</header>
 		<div class="widget-body">
 		
 			<div class="clearfix">
 				<div class="pull-right">
-					<button class="btn btn-primary btn-rounded" ng-click="editAction()">NEW</button>
+					<button class="btn btn-primary btn-rounded" ng-click="createForm()">{{"view.crud.list_new" | translate}}</button>
 				</div>
 			</div>
 
@@ -17,21 +17,25 @@
 				class="table table-hover table-lg mt-lg mb-0 margin_top_30">
 				<thead>
 					<tr>
-					<tr>
-						<th class="text-center" ng-class="getSortClass('id')"  ng-click="sortAction('id')">SEQ</th>
-						<th class="text-center" ng-class="getSortClass('name')"  ng-click="sortAction('name')">이름</th>						
-						<th class="text-center" ng-class="getSortClass('gender')" ng-click="sortAction('gender')">성별</th>
-						<th class="hidden-xs text-center">생년월일</th>
-						<th class="hidden-xs text-center">Email</th>
-						<th class="hidden-xs text-center">편집</th>
+						<th class="text-center" 
+							ng-class="personSearch.sortAttr == 'id' ? (personSearch.sortOder == 'desc' ? 'sorting_desc' : 'sorting_asc') : 'sorting'"  
+							ng-click="read(personPage, personSearch, 'id')">{{"view.crud.list_seq" | translate}}</th>
+						<th class="text-center" 
+							ng-class="personSearch.sortAttr == 'name' ? (personSearch.sortOder == 'desc' ? 'sorting_desc' : 'sorting_asc') : 'sorting'"
+							ng-click="read(personPage, personSearch, 'name')">{{"view.crud.list_name" | translate}}</th>						
+						<th class="text-center" 
+							ng-class="personSearch.sortAttr == 'gender' ? (personSearch.sortOder == 'desc' ? 'sorting_desc' : 'sorting_asc') : 'sorting'"
+							ng-click="read(personPage, personSearch, 'gender')">{{"view.crud.list_gender" | translate}}</th>
+						<th class="hidden-xs text-center">{{"view.crud.list_birth" | translate}}</th>
+						<th class="hidden-xs text-center">{{"view.crud.list_email" | translate}}</th>
+						<th class="hidden-xs text-center">{{"view.crud.list_edit" | translate}}</th>
 					</tr>
-
 				</thead>
 				<tbody>
-					<tr dir-paginate="person in people | itemsPerPage: page.size"
-						total-items="page.totalElements" current-page="pagination.current">
+					<tr dir-paginate="person in people | itemsPerPage: personPage.size"
+						total-items="personPage.totalElements" current-page="personPage.currentPage">
 						<td class="text-center">{{person.no}}</td>
-						<td class="text-center"><a ng-click="viewAction(person)">{{person.name}}</a></td>						
+						<td class="text-center"><a ng-click="readOne(person)">{{person.name}}</a></td>						
 						<td class="text-center">{{person.gender}}</td>
 						<td class="hidden-xs text-center"><p ng-bind="person.birth | date:'yyyy-MM-dd'"></p></td>
 						<td class="hidden-xs">{{person.email}}</td>												
@@ -39,26 +43,28 @@
 							<button
 								class="btn btn-xs btn-primary"
 								mwl-confirm
-								title="삭제 확인"
-								message="삭제하시겠습니까?"
-								confirm-text="예"
-								cancel-text="아니오"
+								title='{{"view.crud.delete_confirm" | translate}}'
+								message='{{"view.crud.delete_msg" | translate}}'
+								confirm-text='{{"view.global.yes" | translate}}'
+								cancel-text='{{"view.global.no" | translate}}'
 								placement="top"
-								on-confirm="deleteAction(person.no)"
+								on-confirm="remove(person)"
 								on-cancel=""
 								confirm-button-type="primary"
 								cancel-button-type="inverse">
-								Delete
+								{{"view.crud.delete" | translate}}
 							</button>
 							<button class="btn btn-xs btn-primary"
-								ng-click="editAction(person)">Edit</button>
+								ng-click="updateForm(person)">{{"view.crud.edit" | translate}}</button>
 						</td>
 					</tr>
 				</tbody>
 			</table>
 			<div class="clearfix text-center">
-				<dir-pagination-controls on-page-change="pageChangeHandler(newPageNumber)"></dir-pagination-controls>
+				<!-- <dir-pagination-controls on-page-change="pageChangeHandler(newPageNumber)"></dir-pagination-controls> -->
+				<dir-pagination-controls on-page-change="read(personPage, personSearch, null, newPageNumber)"></dir-pagination-controls>
 			</div>
+			<!-- <code>{{personPage}}</code> -->
 		</div>
 	</section>
 </div>

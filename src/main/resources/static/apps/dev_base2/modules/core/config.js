@@ -43,15 +43,7 @@
       },
       navCollapseTimeout: 2500,
       
-      appName : "dev_base2",
-      
-      network : {
-  		'ui' : 'http://localhost:8090/',
-  		'rest' : 'http://localhost:8091/',
-  		'xd' : 'http://localhost:9898/'
-	    },
-	    
-	  globalDisable : false
+      appName : "sing App"
     },
 
     /**

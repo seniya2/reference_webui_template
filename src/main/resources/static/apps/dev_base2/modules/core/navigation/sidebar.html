@@ -2,7 +2,7 @@
   <!-- need this .js class to initiate slimscroll -->
   <div class="js-sidebar-content">
     <header class="logo hidden-xs">
-      <a href="index.html">{{app.name}}</a>
+      <a href="index.html">{{ "APP.NAME" | translate }}</a>
     </header>
     <!-- seems like lots of recent admin template have this feature of user info in the sidebar.
          looks good, so adding it and enhancing with notifications -->
@@ -29,6 +29,9 @@
 		</li>
 		<li><a data-ui-sref="app.crud"> <span class="icon"> <i class="fa fa-envelope"></i>
 			</span> CRUD sample </a>
+		</li>
+		<li><a data-ui-sref="app.translate"> <span class="icon"> <i class="fa fa-envelope"></i>
+			</span> Translate sample </a>
 		</li>		
 	</ul>
     

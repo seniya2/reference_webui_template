@@ -1,0 +1,59 @@
+{
+	"view.crud.title" : "CRUD",
+	"view.crud.titleSub" : "CRUD Example - person object",
+	
+	"view.crud.delete_confirm" : "Delete Confirm",
+	"view.crud.delete_msg" : "Are you sure delete ?",
+	"view.crud.delete" : "Delete",
+	"view.crud.edit" : "Edit",	
+	
+	"view.crud.info_basic" : "Info Basic",
+	"view.crud.info_basic_desc" : "Enter the basic information, please.",
+	"view.crud.info_required" : "Info Required",
+	"view.crud.info_required_desc" : "Enter the required information, please.",
+	"view.crud.info_extra" : "Info Extra",
+	"view.crud.info_extra_desc" : "Enter the extra information, please.",
+	
+	"view.crud.list_title" : "CRUD list",
+	"view.crud.list_new" : "NEW",
+	"view.crud.list_seq" : "SEQ",
+	"view.crud.list_name" : "NAME",
+	"view.crud.list_gender" : "GENDER",
+	"view.crud.list_birth" : "BIRTH",
+	"view.crud.list_email" : "EMAIL",
+	"view.crud.list_edit" : "EDIT",
+	
+	"view.crud.view_title" : "CRUD Detail View",
+	"view.crud.view_name" : "NAME",
+	"view.crud.view_password" : "PASSWORD",
+	"view.crud.view_gender" : "GENDER",
+	"view.crud.view_email" : "EMAIL",
+	"view.crud.view_birth" : "BIRTH",
+	"view.crud.view_tel" : "TEL",
+	"view.crud.view_desc" : "DESCRIPTION",
+	"view.crud.view_list_back" : "List",
+	
+	"view.crud.edit_title" : "CRUD Edit or Create",
+	"view.crud.edit_name" : "NAME",
+	"view.crud.edit_password" : "PASSWORD",
+	"view.crud.edit_password_desc" : "4 word over",
+	"view.crud.edit_gender" : "GENDER",
+	"view.crud.edit_email" : "EMAIL",
+	"view.crud.edit_birth" : "BIRTH",
+	"view.crud.edit_tel" : "TEL",
+	"view.crud.edit_tel_desc" : "only number",
+	"view.crud.edit_desc" : "DESCRIPTION",
+	
+	"view.crud.cancel" : "Cancel",
+	"view.crud.save" : "Save",
+	
+	"view_crud_create_success" : "Create Success",
+	"view_crud_create_fail" : "Create Fail",
+	"view_crud_update_success" : "Update Success",
+	"view_crud_update_fail" : "Update Fail",
+	"view_crud_delete_success" : "Delete Success",
+	"view_crud_delete_fail" : "Delete Fail",
+	
+	"view.crud.edit.required" : "Enter the information, please."
+	
+}

@@ -1,0 +1,30 @@
+<div class="container-fluid">
+	<!-- .navbar-header contains links seen on xs & sm screens -->
+	<div class="navbar-header">	
+		<navbar-left></navbar-left>		
+		<!-- <ng-include src="'modules/core/navigation/navbar_left.html'"></ng-include>	 -->
+		<ul class="nav navbar-nav navbar-right visible-xs">
+			<li>
+			<!-- toggles chat -->
+			<a href="#" data-sn-action="toggle-chat-sidebar-state">
+			<span class="rounded rounded-lg bg-gray text-white"><i class="fa fa-globe fa-lg"></i></span>
+			</a>
+			</li>
+		</ul>
+		<a class="navbar-brand" href="#">      
+	      &nbsp; <span class="fw-bold">{{devBase2Config.appName}}</span> &nbsp;      
+	    </a>
+		<!-- xs & sm screen logo -->
+		<a class="navbar-brand visible-xs" href="index.html">
+			<i class="fa fa-circle text-gray mr-n-sm"></i>
+			<i class="fa fa-circle text-warning"></i>
+			&nbsp;
+			{{app.name}}
+			&nbsp;
+			<i class="fa fa-circle text-warning mr-n-sm"></i>
+			<i class="fa fa-circle text-gray"></i>
+		</a>		
+	</div>
+	<!-- <ng-include src="'modules/core/navigation/navbar_right.html'"></ng-include>	 -->
+	<!-- <navbar-right></navbar-right> -->
+</div>

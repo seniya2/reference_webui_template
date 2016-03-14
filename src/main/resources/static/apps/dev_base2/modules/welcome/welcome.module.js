@@ -13,7 +13,7 @@
     $stateProvider
       .state('app.welcome', {
         url: '/welcome',
-        templateUrl: 'dev_base2/modules/welcome/welcome.html',
+        templateUrl: 'modules/welcome/welcome.html',
         controller: 'WelcomeController'
       })
   }

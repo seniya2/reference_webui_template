@@ -2,12 +2,15 @@
     'use strict';
 
     angular.module('singApp', [
+        'mwl.confirm',
+        'angularSpinner',
+        'pascalprecht.translate',// angular-translate
+        'tmh.dynamicLocale',// angular-dynamic-locale
+        
         'singApp.core',
         'singApp.welcome',
         'singApp.crud',
-        
-        'mwl.confirm',
-        'angularSpinner'
+        'singApp.translate',
         
         /*
         'singApp.form.elements',
@@ -40,7 +43,7 @@
     ]);
     
     angular.module('singApp').run(function(confirmationPopoverDefaults) {
-		confirmationPopoverDefaults.templateUrl='../scripts/angular-bootstrap-confirm-master/src/angular-bootstrap-confirm.html';
-		//console.log(confirmationPopoverDefaults); // View all the defaults you can change
+		confirmationPopoverDefaults.templateUrl='../../scripts/angular-bootstrap-confirm-master/src/angular-bootstrap-confirm.html';
 	});
+    
 })();

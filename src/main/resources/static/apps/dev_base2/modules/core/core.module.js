@@ -7,7 +7,11 @@
     'ui.bootstrap',
     'ngAnimate',
     'ngStorage',
-    'ngResource'
+    'ngCookies',
+    'ngResource',
+    'ngSanitize',
+    'pascalprecht.translate',
+    'tmh.dynamicLocale'
   ]);
 
   core.config(appConfig);
@@ -18,7 +22,7 @@
           .state('app', {
               url: '/app',
               abstract: true,
-              templateUrl: 'dev_base2/modules/core/core.html'
+              templateUrl: 'modules/core/core.html'
           });
 
       $urlRouterProvider.otherwise(function ($injector) {
@@ -26,5 +30,4 @@
           $state.go('app.welcome');
       });
   }
-  
 })();

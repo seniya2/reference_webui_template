@@ -3,52 +3,48 @@
 		<section class="widget">
 			<header>
 				<h4>
-					<span class="fw-semi-bold">CRUD</span> 수정 및 작성
+					<span class="fw-semi-bold">{{"view.crud.edit_title" | translate}}</span>
 				</h4>				
 			</header>
 			<div class="widget-body">
-				<form name="editForm"
-						class="form-horizontal form-label-rifht"
-						data-ui-jq="parsley" 
-						data-parsley-priority-enabled="ture"
-						ng-submit="formSubmit(editForm.$valid)">
+				<form name="editForm" class="form-horizontal form-label-rifht">
 					<fieldset>
 						<legend>
-							<span class="label btn-info text-gray-dark mr-xs"> 기본 정보 </span> 기본 정보를 입력해 주세요.
+							<span class="label btn-info text-gray-dark mr-xs"> {{"view.crud.info_basic" | translate}} </span> 
+							{{"view.crud.info_basic_desc" | translate}}
 						</legend>
 						<div class="form-group">
-							<label class="control-label col-sm-3" for="name"><strong>이름</strong></label>
+							<label class="control-label col-sm-3" for="name"><strong>{{"view.crud.edit_name" | translate}}</strong></label>
 							<div class="col-sm-9">
-								<input type="text" id="name" name="name" class="form-control"								
-									data-parsley-trigger="change"
-									data-parsley-required="true"
+								<input type="text" id="name" name="name" class="form-control"
 									ng-model="currentPerson.name" 
 									required="required"
 									ng-minlength="1">
+								<ul ng-show="!editForm.name.$valid" class="parsley-errors-list filled"><li class="parsley-required">{{"view.crud.edit.required" | translate}}</li></ul>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="control-label col-sm-3" for="password">
-								<strong>비밀번호</strong>
-								<span class="help-block">4자 이상</span>
+								<strong>{{"view.crud.edit_password" | translate}}</strong>
+								<span class="help-block">{{"view.crud.edit_password_desc" | translate}}</span>
 							</label>
 							<div class="col-sm-9">
 								<input 
-									type="password" id="password" name="password" class="form-control mb-sm" 
-									data-parsley-trigger="change"
-									data-parsley-minlength="4" 
+									type="password" id="password" name="password" class="form-control mb-sm" 									
 									ng-model="currentPerson.password"
 									ng-minlength="4"
 									required="required">
+								<ul ng-show="!editForm.password.$valid" class="parsley-errors-list filled"><li class="parsley-required">{{"view.crud.edit.required" | translate}}</li></ul>
 							</div>
 						</div>
 					</fieldset>
 					<fieldset>
 						<legend>
-							<span class="label btn-info text-gray-dark mr-xs"> 필수정보 </span> 아래 정보를 입력해 주세요.
+							<span class="label btn-info text-gray-dark mr-xs"> {{"view.crud.info_required" | translate}} </span> 
+							{{"view.crud.info_required_desc" | translate}}
 						</legend>
 						<div class="form-group">
-							<label class="control-label col-sm-3" for="gender"><strong>성별</strong></label>
+							<label class="control-label col-sm-3" for="gender"><strong>{{"view.crud.edit_gender" | translate}}</strong></label>
 							<div class="col-sm-9">
 								<div class="radio radio-danger">
 									<input type="radio" name="gender" id="gender1" value="남" 
@@ -60,54 +56,55 @@
 										ng-model="currentPerson.gender" required> 
 									<label for="gender2"> 여 </label>
 								</div>
+								<ul ng-show="!editForm.gender.$valid" class="parsley-errors-list filled"><li class="parsley-required">{{"view.crud.edit.required" | translate}}</li></ul>
 							</div>						
 						</div>
 					
 						<div class="form-group">
-							<label class="control-label col-sm-3" for="email"><strong>E-mail</strong></label>
+							<label class="control-label col-sm-3" for="email"><strong>{{"view.crud.edit_email" | translate}}</strong></label>
 							<div class="col-sm-9">
-								<input type="email" id="email" name="email" class="form-control"
-									data-parsley-trigger="change"
-	                       			data-parsley-validation-threshold="1"
+								<input type="email" id="email" name="email" class="form-control"									
 									ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/"
 									ng-model="currentPerson.email"
 									ng-minlength="3"
 	                       			required>
+	                       		<ul ng-show="!editForm.email.$valid" class="parsley-errors-list filled"><li class="parsley-required">{{"view.crud.edit.required" | translate}}</li></ul>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="control-label col-sm-3" for="birth">
-								<strong>생년월일</strong>
+								<strong>{{"view.crud.edit_birth" | translate}}</strong>
 							</label>
 							<div class="col-sm-9">
 								<input type="date" id="birth" name="birth" class="form-control"								
 									ng-model="currentPerson.birth"
 									placeholder="yyyy-MM-dd" 
 									required />
+								<ul ng-show="!editForm.birth.$valid" class="parsley-errors-list filled"><li class="parsley-required">{{"view.crud.edit.required" | translate}}</li></ul>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="control-label col-sm-3" for="number">
-								<strong>전화번호</strong>
-								<span class="help-block">숫자만</span>
+								<strong>{{"view.crud.edit_tel" | translate}}</strong>
+								<span class="help-block">{{"view.crud.edit_tel_desc" | translate}}</span>
 							</label>
 							<div class="col-sm-9">
 								<input id="tel" type="number" class="form-control" name = "tel"
-									string-to-number
-									data-parsley-type="number"
-									data-parsley-trigger="change"
+									string-to-number									
 									ng-model="currentPerson.tel"
 									required/>
+								<ul ng-show="!editForm.tel.$valid" class="parsley-errors-list filled"><li class="parsley-required">{{"view.crud.edit.required" | translate}}</li></ul>
 							</div>
 						</div>
 					</fieldset>
 					<fieldset>
 						<legend>
-							<span class="label btn-info text-gray-dark mr-xs"> 추가정보 </span> 아래 정보를 입력해 주세요.
+							<span class="label btn-info text-gray-dark mr-xs"> {{"view.crud.info_extra" | translate}} </span> 
+							{{"view.crud.info_extra_desc" | translate}}
 						</legend>
 						
 						<div class="form-group">
-							<label class="control-label col-sm-3" for="description"><strong>설명</strong></label>
+							<label class="control-label col-sm-3" for="description"><strong>{{"view.crud.edit_desc" | translate}}</strong></label>
 							<div class="col-sm-9">
 								<input type="text" id="description" name="description" class="form-control"
 									ng-model="currentPerson.description"/>
@@ -117,17 +114,19 @@
 					
 					
 					<div class="form-actions">
-						<button type="submit" class="btn btn-primary btn-rounded pull-right">Save</button>
-			            <span class="btn btn-default btn-rounded" ng-click="cancelAction()">Cancel</span>
+						<button type="button" class="btn btn-primary btn-rounded pull-right" 
+							ng-click="create(currentPerson, editForm.$valid)"
+							ng-show="currentPerson.no == null">{{"view.crud.save" | translate}}</button>
+						<button type="button" class="btn btn-primary btn-rounded pull-right" 
+							ng-click="update(currentPerson, editForm.$valid)"
+							ng-show="currentPerson.no != null">{{"view.crud.save" | translate}}</button>
+			            <span class="btn btn-default btn-rounded" ng-click="cancel()">{{"view.crud.cancel" | translate}}</span>
 					</div>
-					
 					
 					<!-- 
 					<tt>currentPerson.password = {{currentPerson.password}}</tt><br/>
 					<tt>editForm.name.$valid = {{editForm.name.$valid}}</tt><br/>
-					<tt>editForm.password.$valid = {{editForm.password.$valid}}</tt><br/>
-					<tt>editForm.password.$valid = {{editForm.password.$valid}}</tt><br/>
-					<tt>editForm.password2.$valid = {{editForm.password2.$valid}}</tt><br/>
+					<tt>editForm.password.$valid = {{editForm.password.$valid}}</tt><br/>					
 					<tt>editForm.gender.$valid = {{editForm.gender.$valid}}</tt><br/>
 					<tt>editForm.email.$valid = {{editForm.email.$valid}}</tt><br/>
 					<tt>editForm.birth.$valid = {{editForm.birth.$valid}}</tt><br/>

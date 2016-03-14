@@ -3,24 +3,24 @@
 		<section class="widget">
 			<header>
 				<h4>
-					<span class="fw-semi-bold">CRUD</span> 상세보기
+					<span class="fw-semi-bold">{{"view.crud.view_title" | translate}}</span>
 				</h4>				
 			</header>
 			<div class="widget-body">
 				<form class="form-horizontal form-label-rifht">
 					<fieldset>
 						<legend>
-							<span class="label label-info  text-gray-dark mr-xs"> 기본 정보 </span>
+							<span class="label label-info  text-gray-dark mr-xs"> {{"view.crud.info_basic" | translate}} </span>
 						</legend>
 						<div class="form-group ">
-							<label class="control-label col-sm-3" for="name"><strong>이름</strong></label>
+							<label class="control-label col-sm-3" for="name"><strong>{{"view.crud.view_name" | translate}}</strong></label>
 							<div class="col-sm-9 view_div_height_30">
 								{{currentPerson.name}}
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="control-label col-sm-3" for="password">
-								<strong>비밀번호</strong>
+								<strong>{{"view.crud.view_password" | translate}}</strong>
 							</label>
 							<div class="col-sm-9 view_div_height_30">
 								{{currentPerson.password}}
@@ -29,24 +29,24 @@
 					</fieldset>
 					<fieldset>
 						<legend>
-							<span class="label label-info  text-gray-dark mr-xs"> 필수정보 </span>
+							<span class="label label-info  text-gray-dark mr-xs"> {{"view.crud.info_required" | translate}} </span>
 						</legend>
 						<div class="form-group">
-							<label class="control-label col-sm-3" for="gender"><strong>성별</strong></label>
+							<label class="control-label col-sm-3" for="gender"><strong>{{"view.crud.view_gender" | translate}}</strong></label>
 							<div class="col-sm-9 view_div_height_30">
 								{{currentPerson.gender}}
 							</div>						
 						</div>
 					
 						<div class="form-group">
-							<label class="control-label col-sm-3" for="email"><strong>E-mail</strong></label>
+							<label class="control-label col-sm-3" for="email"><strong>{{"view.crud.view_email" | translate}}</strong></label>
 							<div class="col-sm-9 view_div_height_30">
 								{{currentPerson.email}}
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="control-label col-sm-3" for="birth">
-								<strong>생년월일</strong>
+								<strong>{{"view.crud.view_birth" | translate}}</strong>
 							</label>
 							<div class="col-sm-9 view_div_height_30">
 								<p ng-bind="currentPerson.birth | date:'yyyy-MM-dd'"></p>
@@ -54,7 +54,7 @@
 						</div>
 						<div class="form-group">
 							<label class="control-label col-sm-3" for="number">
-								<strong>전화번호</strong>
+								<strong>{{"view.crud.view_tel" | translate}}</strong>
 							</label>
 							<div class="col-sm-9 view_div_height_30">
 								{{currentPerson.tel}}
@@ -63,10 +63,10 @@
 					</fieldset>
 					<fieldset>
 						<legend>
-							<span class="label btn-info text-gray-dark mr-xs"> 추가정보 </span>
+							<span class="label btn-info text-gray-dark mr-xs"> {{"view.crud.info_extra" | translate}} </span>
 						</legend>				
 						<div class="form-group">
-							<label class="control-label col-sm-3" for="description"><strong>설명</strong></label>
+							<label class="control-label col-sm-3" for="description"><strong>{{"view.crud.view_desc" | translate}}</strong></label>
 							<div class="col-sm-9 view_div_height_30">
 								{{currentPerson.description}}
 							</div>
@@ -75,7 +75,7 @@
 					
 					
 					<div class="form-actions">
-			            <span class="btn btn-default btn-rounded" ng-click="cancelAction()">List</span>			                
+			            <span class="btn btn-default btn-rounded" ng-click="cancel()">{{"view.crud.view_list_back" | translate}}</span>			                
 					</div>
 					
 				</form>

@@ -8,11 +8,10 @@
     .factory('$exceptionHandler', exceptionHandler)
   ;
 
-  AppController.$inject = ['config', '$scope', '$localStorage', '$state'];
-  function AppController(config, $scope, $localStorage, $state) {
+  AppController.$inject = ['config', '$scope', '$localStorage', '$state','$translate','$rootScope' ];
+  function AppController(config, $scope, $localStorage, $state, $translate, $rootScope) {
     /*jshint validthis: true */
     var vm = this;
-
     vm.title = config.appTitle;
 
     $scope.app = config;
@@ -23,6 +22,12 @@
     } else {
       $localStorage.state = $scope.app.state;
     }
+    
+   $scope.app.globalDisable = false;   
+   $scope.$on("app.globalDisable", function(event, msg){
+	   $scope.app.globalDisable = msg;
+   });
+   
   }
 
   jQueryService.$inject = ['$window'];

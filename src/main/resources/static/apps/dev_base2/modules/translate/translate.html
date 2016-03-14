@@ -1,0 +1,21 @@
+
+<h1>{{ 'TITLE' | translate }}</h1>
+
+
+<p>{{"views.main.Splendid!" | translate}}</p>
+
+
+ 
+ <div ng-translate-language-select></div>
+ 
+ 
+ 
+ <div class="container">
+    <div class="clearfix">
+      <div class="pull-right">
+        <span class="glyphicon glyphicon-time"></span>
+        {{currentTime | date:'medium'}}
+      </div>
+    </div>
+    <div ng-view=""></div>
+  </div>
