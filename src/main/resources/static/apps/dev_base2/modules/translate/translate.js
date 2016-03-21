@@ -7,10 +7,21 @@
 
   TranslateController.$inject = ['$scope','$rootScope','$translate','$interval'];
   function TranslateController ($scope,$rootScope,$translate, $interval) {
+ 
 
+	  $translate('setting_network_ui').then(function (translation) {
+		  $scope.translatedText = translation;
+		  console.log($scope.translatedText);
+		});
 	  
-	 
-
+	$scope.setting_network_ui =  $translate('setting_network_ui');
+	console.log("$scope.setting_network_ui : " + $translate('setting_network_ui').$$state.status);
+	console.log($scope.setting_network_ui);
+	
+	
+	console.log($translate('setting_network_ui').$$state.status);
+	
+	
     /**
      * $scope.locale
      */

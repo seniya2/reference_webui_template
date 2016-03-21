@@ -1,8 +1,8 @@
 {
-	"setting.network.ui" : "http://localhost:8080/",
-	"setting.network.rest" : "http://localhost:8091/",
-	"setting.network.xd" : "http://localhost:9898/",
-	"setting.globalDisable" : "false",
+	"setting_network_ui" : "http://localhost:8080/",
+	"setting_network_rest" : "http://localhost:8091/",
+	"setting_network_xd" : "http://localhost:9898/",
+	"setting_globalDisable" : "false",
 	
 	"directives.language-select.Language": "Language",
 	

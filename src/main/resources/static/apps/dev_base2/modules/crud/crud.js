@@ -35,37 +35,48 @@
 	crudController.$inject = ['$scope', '$rootScope', '$resource', '$http', 'usSpinnerService', '$timeout', '$translate' ];
 	function crudController($scope, $rootScope, $resource, $http, usSpinnerService, $timeout, $translate) {
 
-		var baseUIUrl = "http://localhost:8080/";
-		var baseRestUrl = "http://localhost:8091/";
-		var entityUrl = "http://localhost:8091/"+entityName;
 		var template_base = "modules/crud/";
+		$scope.msg = {};
 		
 		$scope.initilize = function() {			
 			console.log("--> initilize");
+			
+			
 			try {
-				$http({						
-					method : 'GET',
-					url : "modules/crud/resources/preference-" + $translate.use() + ".json"
-				}).success(function(data) {
-					$scope.currentPerson = new Person();
-					$scope.personPage = new PersonPage(20, 0, 0, 0, 1, 0);
-					$scope.personSearch = new PersonSearch("id", "desc", null, null);
-					$scope.template = template_base + "crud-list.html";	
-					$scope.read($scope.personPage, $scope.personSearch);
-					$scope.msg = {};
-					$scope.msg.create_success = data.view_crud_create_success;
-					$scope.msg.create_fail = data.view_crud_create_fail;
-					$scope.msg.update_success = data.view_crud_update_success;
-					$scope.msg.update_fail = data.view_crud_update_fail;
-					$scope.msg.delete_success = data.view_crud_delete_success;
-					$scope.msg.delete_fail = data.view_crud_delete_fail;
-				}).error(function(error) {					
-					console.log("initilize http error : " + error);
-				});		
+				
+				$translate(['setting_network_ui'
+				            ,'setting_network_rest'
+				            ,'view_crud_create_success'
+				            ,'view_crud_create_fail'
+				            ,'view_crud_update_success'
+				            ,'view_crud_update_fail'
+				            ,'view_crud_delete_success'
+				            ,'view_crud_delete_fail']).then(function (translations) {
+				            	
+			            	$scope.baseUIUrl = translations.setting_network_ui;
+			            	$scope.baseRestUrl = translations.setting_network_rest;			
+			            	$scope.entityUrl = $scope.baseRestUrl+entityName;
+			            	$scope.msg.create_success = translations.view_crud_create_success;
+			            	$scope.msg.create_fail = translations.view_crud_create_fail;
+							$scope.msg.update_success = translations.view_crud_update_success;
+							$scope.msg.update_fail = translations.view_crud_update_fail;
+							$scope.msg.delete_success = translations.view_crud_delete_success;
+							$scope.msg.delete_fail = translations.view_crud_delete_fail;							
+							
+							$scope.currentPerson = new Person();
+							$scope.personPage = new PersonPage(20, 0, 0, 0, 1, 0);
+							$scope.personSearch = new PersonSearch("id", "desc", null, null);
+							$scope.template = template_base + "crud-list.html";	
+							$scope.read($scope.personPage, $scope.personSearch);
+				});
+								
 				
 			} catch (e) {
 				console.log("initilize error : " + e);
-			}			
+			}
+			
+			
+			
 		}
 				
 		$scope.read = function(personPage, personSearch, attr, newPageNumber) {
@@ -92,7 +103,7 @@
 			try {							
 				usSpinnerService.spin('app-spinner');				
 				var sort = personSearch.sortAttr + "," + personSearch.sortOder;
-				var requestUrl = entityUrl + "?page="+personPage.newPage + "&size=" + personPage.size + "&sort="+sort;				
+				var requestUrl = $scope.entityUrl + "?page="+personPage.newPage + "&size=" + personPage.size + "&sort="+sort;				
 				$http({						
 					method : 'GET',
 					url : requestUrl						
@@ -134,10 +145,11 @@
 				return;
 			}	
 			try {				
-				$scope.disableScreen(true);
+				//$scope.disableScreen(true);
+				$rootScope.$broadcast("app.disableScreen", true);
 				$http({
 					method : 'POST',
-					url : entityUrl,
+					url : $scope.entityUrl,
 					headers : {
 						'Content-Type' : 'application/json; charset=UTF-8'
 					},
@@ -172,10 +184,11 @@
 				return;
 			}	
 			try {
-				$scope.disableScreen(true);
+				//$scope.disableScreen(true);
+				$rootScope.$broadcast("app.disableScreen", true);
 				$http({
 					method : 'PUT',
-					url : entityUrl + '/' + obj.no,
+					url : $scope.entityUrl + '/' + obj.no,
 					headers : {
 						'Content-Type' : 'application/json; charset=UTF-8'
 					},
@@ -193,10 +206,11 @@
 		$scope.remove = function(obj) {
 			console.log("--> remove");
 			try {
-				$scope.disableScreen(true);
+				//$scope.disableScreen(true);
+				$rootScope.$broadcast("app.disableScreen", true);
 				$http({
 					method : 'DELETE',
-					url : entityUrl + '/' + obj.no
+					url : $scope.entityUrl + '/' + obj.no
 				}).success(function(data) {
 					$scope.success(data, "REMOVE");					
 				}).error(function(error) {
@@ -218,43 +232,51 @@
 		}		
 		
 		$scope.success = function(data, type) {
-			$scope.disableScreen(false);
+			//$scope.disableScreen(false);
+			$rootScope.$broadcast("app.disableScreen", false);
 			if (type == "LIST") {
 				$scope.people = data._embedded.person;
 				$scope.personPage = new PersonPage(data.page.size, data.page.totalElements, data.page.totalPages, data.page.number, data.page.number+1, data.page.number);		
 			} else if (type == "CREATE") {
 				$scope.template = template_base + "crud-list.html";
 				$scope.read($scope.personPage, $scope.personSearch);
-				$scope.massagePopup($scope.msg.create_success, "success");				
+				$rootScope.$broadcast("app.massagePopup", {"msg" : $scope.msg.create_success, "type" : "success"});
+				//$scope.massagePopup($scope.msg.create_success, "success");				
 			} else if (type == "UPDATE") {
 				$scope.template = template_base + "crud-list.html";
 				$scope.read($scope.personPage, $scope.personSearch);
-				$scope.massagePopup($scope.msg.update_success, "success");
+				$rootScope.$broadcast("app.massagePopup", {"msg" : $scope.msg.update_success, "type" : "success"});
+				//$scope.massagePopup($scope.msg.update_success, "success");
 			} else if (type == "REMOVE") {
 				$scope.template = template_base + "crud-list.html";
 				$scope.read($scope.personPage, $scope.personSearch);
-				$scope.massagePopup($scope.msg.delete_success, "success");				
+				$rootScope.$broadcast("app.massagePopup", {"msg" : $scope.msg.delete_success, "type" : "success"});
+				//$scope.massagePopup($scope.msg.delete_success, "success");				
 			}			
 		}
 		
 		
 		$scope.error = function(error, type) {
-			$scope.disableScreen(false);
+			//$scope.disableScreen(false);
+			$rootScope.$broadcast("app.disableScreen", false);
 			if (type == "LIST") {				
 				console.log("$http error : " + error);
 			} else if (type == "CREATE") {
-				$scope.massagePopup($scope.msg.create_fail, "error");				
+				$rootScope.$broadcast("app.massagePopup", {"msg" : $scope.msg.create_fail, "type" : "error"});
+				//$scope.massagePopup($scope.msg.create_fail, "error");				
 				console.log("$http error : " + error);
 			} else if (type == "UPDATE") {
-				$scope.massagePopup($scope.msg.update_fail, "error");				
+				$rootScope.$broadcast("app.massagePopup", {"msg" : $scope.msg.update_fail, "type" : "error"});
+				//$scope.massagePopup($scope.msg.update_fail, "error");				
 				console.log("$http error : " + e);
 			} else if (type == "REMOVE") {
-				$scope.massagePopup($scope.msg.delete_fail, "error");
+				$rootScope.$broadcast("app.massagePopup", {"msg" : $scope.msg.delete_fail, "type" : "error"});
+				//$scope.massagePopup($scope.msg.delete_fail, "error");
 				console.log("$http error : " + e);
 			}
 		}
 		
-		
+		/*
 		$scope.massagePopup = function(msg, type) {	
 			console.log("--> massagePopup : " + msg);			
 			try {				
@@ -287,7 +309,7 @@
 				console.log("disableScreen error :" + e);
 			}
 		};
-				
+		*/		
 	}
 	
 })();

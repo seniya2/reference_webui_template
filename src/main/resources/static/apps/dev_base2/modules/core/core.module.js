@@ -9,9 +9,7 @@
     'ngStorage',
     'ngCookies',
     'ngResource',
-    'ngSanitize',
-    'pascalprecht.translate',
-    'tmh.dynamicLocale'
+    'ngSanitize'
   ]);
 
   core.config(appConfig);
