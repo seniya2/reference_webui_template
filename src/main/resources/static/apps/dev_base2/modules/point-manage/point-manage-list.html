@@ -1,0 +1,68 @@
+<div class="col-md-12">
+	<section class="widget">
+		<div class="widget-body">
+		
+			<form name="searchForm" ng-submit="searchClickFn(searchForm.$valid)">
+			<div class="clearfix form-group">
+				<div class="pull-left">
+					<h5 class="fw-bold">{{"view_point_manage_list_search_title" | translate}}</h5>
+				</div>
+				
+				<div class="pull-left margin_left_20">
+					 <input type="search" 
+							 name="searchName"
+							 id="searchName"
+							 ng-model="searchName" 
+							 typeahead="point for point in pointInfo | filter:$viewValue" 
+							 class="form-control"
+							 style="width:250px"
+							 placeholder='  {{"view_point_manage_list_search_sub" | translate}}'
+							 autocomplete="off">
+				</div>
+				
+				<span class="input-group-btn pull-left">
+                  <button type="submit" class="btn btn-default">{{"view_point_manage_list_search_button" | translate}}</button>
+                </span>
+                                
+			</div>
+			</form>
+	
+			<span translate="view_point_manage_list_title" translate-value-name="{{pointPage.totalElements}}">{{pointPage.totalElements}}</span>
+			<table
+				class="table table-hover table-lg mt-lg mb-0">
+				<thead>
+					<tr>
+					<tr>										
+						<th class="text-center" 
+							ng-class="pointSearch.sortAttr == 'id' ? (pointSearch.sortOder == 'desc' ? 'sorting_desc' : 'sorting_asc') : 'sorting'"  
+							ng-click="read(pointPage, pointSearch, 'id')">{{"view_point_manage_list_id" | translate}}</th>
+						<th class="text-center"
+							ng-class="pointSearch.sortAttr == 'name' ? (pointSearch.sortOder == 'desc' ? 'sorting_desc' : 'sorting_asc') : 'sorting'"  
+							ng-click="read(pointPage, pointSearch, 'name')">{{"view_point_manage_list_name" | translate}}</th>
+						<!-- <th class="hidden-xs text-center" style="width: 280px;">통신 상태 (시간 <span class="custom-point-value">현재값</span>)</th> -->
+						<th class="hidden-xs text-center" style="width: 280px;">{{"view_point_manage_list_value" | translate}}</th>
+						<th class="hidden-xs text-center" style="width: 180px;"
+							ng-class="pointSearch.sortAttr == 'interval' ? (pointSearch.sortOder == 'desc' ? 'sorting_desc' : 'sorting_asc') : 'sorting'"  
+							ng-click="read(pointPage, pointSearch, 'interval')">{{"view_point_manage_list_type" | translate}}</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr dir-paginate="point in pointList | itemsPerPage: pointPage.size"
+						total-items="pointPage.totalElements" current-page="pointPage.currentPage">
+						<td class="text-center"><a ng-click="updateForm(point)">{{point.id}}</a></td>
+						<td class="text-center">{{point.name}}</td>
+						<td class="hidden-xs text-center">
+							<div class="pull-left text-center padding_left_10">{{((point.datetime).substr(0,19)).replace("T"," ");}}</div>
+							<div class="pull-left text-center padding_left_10"><span class="custom-point-value">{{point.value}}</span></div>
+							<div class="pull-left text-center padding_left_10"><a ng-click="readOne(point.id, $index)"><i class="fa fa-refresh"></i></a></div>
+						</td>
+						<td class="hidden-xs text-center"><div class="padding_left_10" ng-bind-html="point.dataType"></div></td>	
+					</tr>
+				</tbody>		
+			</table>
+			<div class="clearfix text-center" ng-show="paginationDisplay">
+				<dir-pagination-controls on-page-change="read(pointPage, pointSearch, null, newPageNumber)"></dir-pagination-controls>
+			</div>
+		</div>
+	</section>
+</div>

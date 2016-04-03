@@ -1,0 +1,39 @@
+{
+	"view_point_manage_info_basic" : "Info Basic",
+	"view_point_manage_info_basic_desc" : "Enter the basic information, please.",
+	"view_point_manage_info_required" : "Info Required",
+	"view_point_manage_info_required_desc" : "Enter the required information, please.",
+	"view_point_manage_info_extra" : "Info Extra",
+	"view_point_manage_info_extra_desc" : "Enter the extra information, please.",
+	
+	"view_point_manage_list_search_title" : "ID or Name",
+	"view_point_manage_list_search_sub" : "Enter the Name information.",
+	"view_point_manage_list_search_button" : "Search",
+	"view_point_manage_list_title" : "Total {{name}} Numbers",
+	"view_point_manage_list_id" : "ID",
+	"view_point_manage_list_name" : "Name",
+	"view_point_manage_list_value" : "Communication (Time)",
+	"view_point_manage_list_type" : "Type",
+	"view_point_manage_list_point_normal" : "Normal",
+	"view_point_manage_list_point_alarm" : "Alarm",
+	"view_point_manage_list_point_history" : "History",
+	
+	"view_point_manage_edit_id" : "ID",
+	"view_point_manage_edit_name" : "Name",
+	"view_point_manage_edit_interval" : "Interval",
+	"view_point_manage_edit_criteria" : "Criteria",
+	"view_point_manage_edit_criteria_example" : "Criteria Example",
+	
+	"view_point_manage_cancel" : "Cancel",
+	"view_point_manage_save" : "Save",
+	
+	"view_point_manage_create_success" : "Create Success",
+	"view_point_manage_create_fail" : "Create Fail",
+	"view_point_manage_update_success" : "Update Success",
+	"view_point_manage_update_fail" : "Update Fail",
+	"view_point_manage_delete_success" : "Delete Success",
+	"view_point_manage_delete_fail" : "Delete Fail",
+	
+	"view_point_manage_edit.required" : "Enter the information, please."
+	
+}

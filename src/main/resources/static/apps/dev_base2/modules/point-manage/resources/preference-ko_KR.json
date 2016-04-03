@@ -1,0 +1,39 @@
+{
+	"view_point_manage_info_basic" : "기본 정보",
+	"view_point_manage_info_basic_desc" : "기본 정보를 입력해 주세요.",
+	"view_point_manage_info_required" : "필수 정보",
+	"view_point_manage_info_required_desc" : "아래 정보를 입력해 주세요",
+	"view_point_manage_info_extra" : "추가 정보",
+	"view_point_manage_info_extra_desc" : "아래 정보를 입력해 주세요.",
+	
+	"view_point_manage_list_search_title" : "아이디 또는 관제점",
+	"view_point_manage_list_search_sub" : "관제점 검색어를 입력하세요.",
+	"view_point_manage_list_search_button" : "검색",
+	"view_point_manage_list_title" : "총  {{name}} 개의 관제점이 있습니다.",
+	"view_point_manage_list_id" : "아이디",
+	"view_point_manage_list_name" : "관제점",
+	"view_point_manage_list_value" : "통신 상태 (시간 현재값)",
+	"view_point_manage_list_type" : "유형",
+	"view_point_manage_list_point_normal" : "일반포인트",
+	"view_point_manage_list_point_alarm" : "알람포인트",
+	"view_point_manage_list_point_history" : "이력포인트",
+	
+	"view_point_manage_edit_id" : "아이디",
+	"view_point_manage_edit_name" : "관제점",
+	"view_point_manage_edit_interval" : "저장주기",
+	"view_point_manage_edit_criteria" : "알람조건식",
+	"view_point_manage_edit_criteria_example" : "알람조건식 예시",
+	
+	"view_point_manage_cancel" : "취소",
+	"view_point_manage_save" : "저장",
+	
+	"view_point_manage_create_success" : "저장 되었습니다.",
+	"view_point_manage_create_fail" : "저장 실패",
+	"view_point_manage_update_success" : "변경 되었습니다.",
+	"view_point_manage_update_fail" : "변경 실패",
+	"view_point_manage_delete_success" : "삭제 되었습니다.",
+	"view_point_manage_delete_fail" : "삭제 실패",
+	
+	"view_point_manage_edit.required" : "필수 입력사항입니다."
+	
+}

@@ -10,7 +10,8 @@
         'singApp.core',
         'singApp.welcome',
         'singApp.crud',
-        'singApp.translate'
+        'singApp.translate',
+        'singApp.point-manage'
         
         /*
         'singApp.form.elements',
@@ -67,10 +68,13 @@
         }, {
             prefix: 'modules/crud/resources/preference-',
             suffix: '.json'
+        }, {
+            prefix: 'modules/point-manage/resources/preference-',
+            suffix: '.json'
         }]
     });
     
-    $translateProvider.preferredLanguage('ko_KR');
+    $translateProvider.preferredLanguage('en_US');
     $translateProvider.useLocalStorage();
     $translateProvider.useSanitizeValueStrategy(null);
     tmhDynamicLocaleProvider.localeLocationPattern('../../scripts/angular-i18n/angular-locale_{{locale}}.js');
@@ -160,8 +164,8 @@
     
 	
 	angular.module('singApp.core').controller('App2', AppController2);	
-	AppController2.$inject = ['config', '$scope', '$localStorage', '$state', '$translate', '$rootScope', 'usSpinnerService', '$timeout' ];
-	function AppController2(config, $scope, $localStorage, $state, $translate, $rootScope, usSpinnerService, $timeout) {
+	AppController2.$inject = ['$scope', '$translate', '$rootScope', 'usSpinnerService', '$timeout' ];
+	function AppController2($scope, $translate, $rootScope, usSpinnerService, $timeout) {
 		  
 		console.log("AppController2 --> ");
 		  

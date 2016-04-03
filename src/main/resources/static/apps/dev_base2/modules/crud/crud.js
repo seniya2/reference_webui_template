@@ -39,8 +39,7 @@
 		$scope.msg = {};
 		
 		$scope.initilize = function() {			
-			console.log("--> initilize");
-			
+			console.log("--> initilize");			
 			
 			try {
 				
@@ -68,15 +67,11 @@
 							$scope.personSearch = new PersonSearch("id", "desc", null, null);
 							$scope.template = template_base + "crud-list.html";	
 							$scope.read($scope.personPage, $scope.personSearch);
-				});
-								
+				});								
 				
 			} catch (e) {
 				console.log("initilize error : " + e);
-			}
-			
-			
-			
+			}			
 		}
 				
 		$scope.read = function(personPage, personSearch, attr, newPageNumber) {
@@ -276,40 +271,6 @@
 			}
 		}
 		
-		/*
-		$scope.massagePopup = function(msg, type) {	
-			console.log("--> massagePopup : " + msg);			
-			try {				
-				Messenger({
-					extraClasses: 'messenger-fixed messenger-on-top',
-	    		    theme: 'air'
-				}).post({
-					  message: msg,
-					  type: type,
-					  showCloseButton: false
-				});				
-			}catch (e) {
-				console.log("massagePopup error :" + e);
-			}
-		}
-		
-		$scope.disableScreen = function(enable) {	
-			console.log("--> disableScreen : " + enable);			
-			try {				
-				if (enable) {
-					$rootScope.$broadcast("app.globalDisable", true);					
-					usSpinnerService.spin('app-spinner');					
-				} else {
-					$timeout(function(){
-						$rootScope.$broadcast("app.globalDisable", false);						
-						usSpinnerService.stop('app-spinner');
-					}, 500);
-				}				
-			}catch (e) {
-				console.log("disableScreen error :" + e);
-			}
-		};
-		*/		
 	}
 	
 })();
