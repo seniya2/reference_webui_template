@@ -1,2 +1,4 @@
-<h1>{{hello}}</h1>
-<button ng-click="world()">world</button>
+<h1>{{ 'HELLO' | translate }}</h1>
+<h1>{{ 'TITLE' | translate }} : {{ 'APP.NAME' | translate }}</h1>
+<span class="glyphicon glyphicon-time"></span>
+{{currentTime | date:'medium'}}

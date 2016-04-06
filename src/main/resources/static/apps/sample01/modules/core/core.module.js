@@ -6,7 +6,10 @@
 	'ui.router',
 	'ui.bootstrap',
 	'ngAnimate',
-	'ngStorage'
+	'ngStorage',
+	'ngCookies',
+	'ngResource',
+	'ngSanitize'
   ]);
 
   core.config(appConfig);
