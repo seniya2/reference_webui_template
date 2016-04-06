@@ -12,7 +12,6 @@
   function AppController(config, $scope, $localStorage, $state) {
     /*jshint validthis: true */
     var vm = this;
-
     vm.title = config.appTitle;
 
     $scope.app = config;
@@ -23,6 +22,7 @@
     } else {
       $localStorage.state = $scope.app.state;
     }
+
   }
 
   jQueryService.$inject = ['$window'];

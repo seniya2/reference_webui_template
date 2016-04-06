@@ -4,11 +4,11 @@
 	"setting_network_xd" : "http://localhost:9898/",
 	"setting_globalDisable" : "false",
 	
-	"directives.language-select.Language": "Language",
+	"directives.language-select.Language": "언어",
 	
-	"TITLE" : "title en us",
-	"APP.NAME" : "dev_base2",
+	"TITLE" : "타이틀 ko KR",
+	"APP.NAME" : "Sample02",
 	
-	"view.global.yes": "Yes",
-	"view.global.no": "No"
+	"view.global.yes": "네",
+	"view.global.no": "아니오"
 }
