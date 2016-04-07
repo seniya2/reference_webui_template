@@ -5,10 +5,7 @@
     'ui.router'
   ]);
 
-  module.config(appConfig);
-
   appConfig.$inject = ['$stateProvider'];
-
   function appConfig($stateProvider) {
     $stateProvider
       .state('app.welcome', {
@@ -17,4 +14,7 @@
         controller: 'WelcomeController'
       })
   }
+  
+  module.config(appConfig);
+  
 })();
