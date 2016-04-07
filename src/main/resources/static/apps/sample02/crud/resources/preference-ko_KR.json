@@ -1,0 +1,59 @@
+{
+	"CRUD.title" : "CRUD",
+	"CRUD.titleSub" : "CRUD 예제 - person 객체",
+	
+	"CRUD.delete_confirm" : "삭제 확인",
+	"CRUD.delete_msg" : "삭제하시겠습니까 ?",
+	"CRUD.delete" : "삭제",
+	"CRUD.edit" : "수정",	
+	
+	"CRUD.info_basic" : "기본 정보",
+	"CRUD.info_basic_desc" : "기본 정보를 입력해 주세요.",
+	"CRUD.info_required" : "필수 정보",
+	"CRUD.info_required_desc" : "아래 정보를 입력해 주세요",
+	"CRUD.info_extra" : "추가 정보",
+	"CRUD.info_extra_desc" : "아래 정보를 입력해 주세요.",
+	
+	"CRUD.list_title" : "CRUD list",
+	"CRUD.list_new" : "신규",
+	"CRUD.list_seq" : "SEQ",
+	"CRUD.list_name" : "이름",
+	"CRUD.list_gender" : "성별",
+	"CRUD.list_birth" : "생년월일",
+	"CRUD.list_email" : "이메일",
+	"CRUD.list_edit" : "편집",
+	
+	"CRUD.view_title" : "CRUD 상세보기",	
+	"CRUD.view_name" : "이름",
+	"CRUD.view_password" : "비밀번호",
+	"CRUD.view_gender" : "성별",
+	"CRUD.view_email" : "이메일",
+	"CRUD.view_birth" : "생년월일",
+	"CRUD.view_tel" : "전화번호",
+	"CRUD.view_desc" : "설명",
+	"CRUD.view_list_back" : "리스트",
+	
+	"CRUD.edit_title" : "CRUD 수정 및 작성",
+	"CRUD.edit_name" : "이름",
+	"CRUD.edit_password" : "비밀번호",
+	"CRUD.edit_password_desc" : "4자 이상",
+	"CRUD.edit_gender" : "성별",
+	"CRUD.edit_email" : "이메일",
+	"CRUD.edit_birth" : "생년월일",
+	"CRUD.edit_tel" : "전화번호",
+	"CRUD.edit_tel_desc" : "숫자만",
+	"CRUD.edit_desc" : "설명",
+	
+	"CRUD.cancel" : "취소",
+	"CRUD.save" : "저장",
+	
+	"CRUD.edit.required" : "필수 입력사항입니다.",
+	
+	"CRUD_create_success" : "저장 되었습니다.",
+	"CRUD_create_fail" : "저장 실패",
+	"CRUD_update_success" : "변경 되었습니다.",
+	"CRUD_update_fail" : "변경 실패",
+	"CRUD_delete_success" : "삭제 되었습니다.",
+	"CRUD_delete_fail" : "삭제 실패"
+	
+}

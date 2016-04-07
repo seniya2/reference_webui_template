@@ -25,20 +25,14 @@
     <!-- main notification links are placed inside of .sidebar-nav -->
     <ul class="sidebar-nav">		
 		<li><a data-ui-sref="app.welcome"> <span class="icon"> <i class="fa fa-envelope"></i>
-			</span> Welocome </a>
+			</span> {{ 'APP.MENU.WELCOME' | translate }} </a>
 		</li>
 		<li><a data-ui-sref="app.crud"> <span class="icon"> <i class="fa fa-envelope"></i>
-			</span> CRUD sample </a>
+			</span> {{ 'APP.MENU.CRUD' | translate }} </a>
 		</li>
 		<li><a data-ui-sref="app.translate"> <span class="icon"> <i class="fa fa-envelope"></i>
-			</span> Translate sample </a>
-		</li>	
-		<li><a data-ui-sref="app.point-manage({entityName: 'hvac'})"> <span class="icon"> <i class="fa fa-envelope"></i>
-			</span> 관제점보기-HVAC </a>
-		</li>	
-		<li><a data-ui-sref="app.point-manage({entityName: 'electric'})"> <span class="icon"> <i class="fa fa-envelope"></i>
-			</span> 관제점보기-Electric </a>
-		</li>	
+			</span> {{ 'APP.MENU.TRANSLATE' | translate }} </a>
+		</li>
 	</ul>
     
   </div>

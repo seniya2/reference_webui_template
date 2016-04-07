@@ -6,9 +6,10 @@
 	
 	"directives.language-select.Language": "언어",
 	
-	"TITLE" : "타이틀 ko KR",
-	"APP.NAME" : "Sample02",
+	"APP.NAME" : "샘플02",
+	"APP.BROWSER.TITLE" : "레퍼런스 템플릿",
+	"APP.MENU.WELCOME" : "환영페이지",
+	"APP.MENU.CRUD" : "CRUD 샘플",
+	"APP.MENU.TRANSLATE" : "TransLate 샘플"
 	
-	"view.global.yes": "네",
-	"view.global.no": "아니오"
 }

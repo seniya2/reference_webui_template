@@ -20,7 +20,7 @@
           .state('app', {
               url: '/app',
               abstract: true,
-              templateUrl: 'modules/core/core.html'
+              templateUrl: 'core/core.html'
           });
 
       $urlRouterProvider.otherwise(function ($injector) {

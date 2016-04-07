@@ -31,11 +31,11 @@
 		this.searchTarget = searchTarget;
 	}
 	
-	angular.module('singApp.crud').controller('crudController', crudController);
+	
 	crudController.$inject = ['$scope', '$rootScope', '$resource', '$http', 'usSpinnerService', '$timeout', '$translate' ];
 	function crudController($scope, $rootScope, $resource, $http, usSpinnerService, $timeout, $translate) {
 
-		var template_base = "modules/crud/";
+		var template_base = "crud/";
 		$scope.msg = {};
 		
 		$scope.initilize = function() {			
@@ -45,22 +45,22 @@
 				
 				$translate(['setting_network_ui'
 				            ,'setting_network_rest'
-				            ,'view_crud_create_success'
-				            ,'view_crud_create_fail'
-				            ,'view_crud_update_success'
-				            ,'view_crud_update_fail'
-				            ,'view_crud_delete_success'
-				            ,'view_crud_delete_fail']).then(function (translations) {
+				            ,'CRUD_create_success'
+				            ,'CRUD_create_fail'
+				            ,'CRUD_update_success'
+				            ,'CRUD_update_fail'
+				            ,'CRUD_delete_success'
+				            ,'CRUD_delete_fail']).then(function (translations) {
 				            	
 			            	$scope.baseUIUrl = translations.setting_network_ui;
 			            	$scope.baseRestUrl = translations.setting_network_rest;			
 			            	$scope.entityUrl = $scope.baseRestUrl+entityName;
-			            	$scope.msg.create_success = translations.view_crud_create_success;
-			            	$scope.msg.create_fail = translations.view_crud_create_fail;
-							$scope.msg.update_success = translations.view_crud_update_success;
-							$scope.msg.update_fail = translations.view_crud_update_fail;
-							$scope.msg.delete_success = translations.view_crud_delete_success;
-							$scope.msg.delete_fail = translations.view_crud_delete_fail;							
+			            	$scope.msg.create_success = translations.CRUD_create_success;
+			            	$scope.msg.create_fail = translations.CRUD_create_fail;
+							$scope.msg.update_success = translations.CRUD_update_success;
+							$scope.msg.update_fail = translations.CRUD_update_fail;
+							$scope.msg.delete_success = translations.CRUD_delete_success;
+							$scope.msg.delete_fail = translations.CRUD_delete_fail;							
 							
 							$scope.currentPerson = new Person();
 							$scope.personPage = new PersonPage(20, 0, 0, 0, 1, 0);
@@ -272,5 +272,7 @@
 		}
 		
 	}
+	
+	angular.module('singApp.crud').controller('crudController', crudController);
 	
 })();

@@ -179,7 +179,7 @@
     };
     return {
       replace: true,
-      templateUrl: 'modules/core/navigation/sidebar.html',
+      templateUrl: 'core/navigation/sidebar.html',
       link: function (scope, $el){
         var d = new SnNavigationDirective($el, scope);
 
