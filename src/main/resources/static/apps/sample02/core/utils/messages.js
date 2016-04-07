@@ -15,10 +15,10 @@
 		$translateProvider.useMissingTranslationHandlerLog();
 		$translateProvider.useStaticFilesLoader({
 			files: [{
-	            prefix: 'core/resources/preference-',
+	            prefix: 'core/resources/messages_',
 	            suffix: '.json'
 	        }, {
-	            prefix: 'crud/resources/preference-',
+	            prefix: 'crud/resources/messages_',
 	            suffix: '.json'
 	        }]
 		});
