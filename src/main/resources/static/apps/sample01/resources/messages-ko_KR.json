@@ -1,7 +1,10 @@
 {
-	"directives.language-select.Language": "언어",
+	"directives.language-select.Language": "언어",	
+	
+	"APP.NAME" : "샘플01",
+	"APP.BROWSER.TITLE" : "레퍼런스 템플릿",
+	"APP.MENU.WELCOME" : "환영페이지",
 	
 	"TITLE" : "타이틀 (ko_KR)",
-	"HELLO" : "안녕하세요.",
-	"APP.NAME" : "샘플01"
+	"HELLO" : "안녕하세요."
 }

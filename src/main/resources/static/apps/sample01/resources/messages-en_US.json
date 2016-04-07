@@ -1,7 +1,10 @@
 {
 	"directives.language-select.Language": "Language",
 	
+	"APP.NAME" : "Sample01",
+	"APP.BROWSER.TITLE" : "reference_webui_template",
+	"APP.MENU.WELCOME" : "Welocome",
+	
 	"TITLE" : "Title (en_us)",
-	"HELLO" : "Hello.",
-	"APP.NAME" : "Sample01"
+	"HELLO" : "Hello."	
 }
