@@ -1,0 +1,16 @@
+
+<html>
+<head>
+	<script type="text/javascript" src="/webjars/angularjs/1.5.3/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</head>
+
+<body ng-app="app" ng-controller="MainCtrl">
+ <ul>
+   <li ng-repeat="person in developers">
+     {{person.name}} from {{person.country}}
+   </li>
+ </ul>
+</body>
+
+</html>

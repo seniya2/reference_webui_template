@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html ng-app="store">
+<head>
+<link rel='stylesheet' href='/webjars/bootstrap/3.1.0/css/bootstrap.min.css'>
+<script type="text/javascript" src="/webjars/angularjs/1.5.3/angular.min.js"></script>
+<script type="text/javascript" src="app.js"></script>
+</head>
+
+<body>
+<p>
+ I am {{4 + 6}}
+</p>
+<p>
+ {{"hello" + " you"}}
+</p>
+
+<p>
+{{'1388123412323' | date:'MM/dd/yyyy @ h:mma'}}
+</p>
+<p>
+{{'octagon gem' | uppercase}}
+</p>
+<p>
+{{'My Description' | limitTo:8}}
+</p>
+
+
+<div ng-controller="StoreController as store">
+	
+	<ul class="list-group">
+        <li class="list-group-item" ng-hide="store.products[0].soldOut"
+    	ng-repeat="product in store.products | orderBy:'price'"
+    	>
+    	   
+			<h1> {{product.name}} </h1>
+			<h2> ${{product.price}} </h2>
+			<p> {{product.description}} </p>		
+			<button ng-show="product.canPurchase"> Add to Cart </button>
+			
+			<h3 ng-include="'resources/product-title.html'"></h3>
+			
+			<h3>
+				 {{product.name}}
+				 <em class="pull-right">{{product.price  | currency}}</em>
+				 <img ng-src="{{product.images[0].full}}"
+				 
+				 
+			<section ng-init="tab = 1">
+			 <ul class="nav nav-pills">
+				 <li ng-class="{ active:tab === 1 }"> 
+				   <a href ng-click="tab = 1">Description</a> 
+				 </li>
+				 <li ng-class="{ active:tab === 2 }"> 
+				   <a href ng-click="tab = 2">Specifications</a> 
+				 </li>
+				 <li ng-class="{ active:tab === 3 }">
+				   <a href ng-click="tab = 3">Reviews</a> 
+				 </li>
+				 {{tab}}
+			 </ul>
+			</section>	
+			
+			<div class="panel" ng-show="tab === 1">
+			     <h4>Description</h4>
+			     <p>{{product.description}}</p>
+			</div>
+			<div class="panel" ng-show="tab === 2">
+				 <h4>Specifications</h4>
+				 <blockquote>None yet</blockquote>
+			</div>
+			<div class="panel" ng-show="tab === 3">
+				 <h4>Reviews</h4>
+				
+				<blockquote ng-repeat="review in product.reviews">
+					 <b>Stars: {{review.stars}}</b>
+					 {{review.body}}
+					 <cite>by: {{review.author}}</cite>
+				</blockquote>
+				
+				<form name="reviewForm" 
+				    ng-controller="ReviewController as reviewCtrl"
+				    ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" 
+				    >
+				 
+				 <select ng-model="reviewCtrl.review.stars" required>
+					 <option value="1">1 star</option>
+					 <option value="2">2 stars</option>
+                     <option value="3">3 stars</option>
+                     <option value="4">4 stars</option>
+                     <option value="5">5 stars</option>
+				 </select>
+				 <textarea ng-model="reviewCtrl.review.body" required></textarea>
+				 <label>by:</label>
+				 <input ng-model="reviewCtrl.review.author" type="email" required/>
+				 
+				 <input ng-model="reviewCtrl.review.terms" type="checkbox" /> I agree to the terms
+				 <input ng-model="reviewCtrl.review.color" type="radio" value="red" /> Red
+				<input ng-model="reviewCtrl.review.color" type="radio" value="blue" /> Blue
+				<input ng-model="reviewCtrl.review.color" type="radio" value="green" /> Green
+                <div> reviewForm is {{reviewForm.$valid}} </div>
+				 
+				 <input type="submit" value="Submit" />
+				</form>
+
+				
+			</div>
+
+
+
+
+
+			 
+		    </h3>
+		</li>
+	</ul>
+</div>
+ 
+
+</body>
+</html>
