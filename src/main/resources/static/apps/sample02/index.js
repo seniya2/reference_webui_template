@@ -10,7 +10,8 @@
         'singApp.core',
         'singApp.welcome',
         'singApp.crud',
-        'singApp.translate'
+        'singApp.translate',
+        'singApp.restangular'
     ]);
     
 })();

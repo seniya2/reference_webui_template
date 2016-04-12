@@ -10,6 +10,7 @@
 	"APP.BROWSER.TITLE" : "reference_webui_template",
 	"APP.MENU.WELCOME" : "Welocome",
 	"APP.MENU.CRUD" : "CRUD sample",
-	"APP.MENU.TRANSLATE" : "TransLate sample"
+	"APP.MENU.TRANSLATE" : "TransLate sample",
+	"APP.MENU.RESTANGULAR" : "restangular sample"
 	
 }

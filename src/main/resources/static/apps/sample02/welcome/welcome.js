@@ -1,9 +1,13 @@
 (function() {
 	'use strict';
 
-	welcomeController.$inject = [ '$scope', '$rootScope' ];
-	function welcomeController($scope, $rootScope) {
+	welcomeController.$inject = [ '$scope', '$rootScope','$translate'];
+	function welcomeController($scope, $rootScope, $translate) {
 
+		console.log("welcomeController -->");
+		//console.log(scriptMsg.getMsg());
+		//console.log(scriptMsg.getMsg().$$state);
+		
 		$scope.hello = "hello";
 
 		$scope.world = function() {
