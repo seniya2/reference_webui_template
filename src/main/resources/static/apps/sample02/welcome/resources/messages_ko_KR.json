@@ -1,0 +1,9 @@
+{
+	"WELCOME.TITLE" : "WELCOME",
+	"WELCOME.MENU.DESC" : "설명",
+	"WELCOME.MENU.FUNCTION" : "기능",
+	"WELCOME.MSG_POPUP" : "메세지 팝업",
+	"WELCOME.MSG_CALL" : "메세지 호출",
+	"WELCOME.MSG_CALL2" : "메세지 호출",
+	"WELCOME.BLOCKING_POPUP" : "블로킹 팝업"	
+}

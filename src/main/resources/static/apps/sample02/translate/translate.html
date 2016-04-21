@@ -1,7 +1,23 @@
 <div class="container">
-	<h1>{{ 'TITLE' | translate }}</h1>
 	
-	<span class="glyphicon glyphicon-time"></span>
-	{{currentTime | date:'medium'}}
 
 </div>
+
+<div class="col-md-12">
+	<section class="widget">
+		<header>
+			<h4>
+				<span class="fw-semi-bold">{{ 'TRANSLATE.TITLE' | translate }}</span>
+			</h4>
+		</header>
+		<div class="widget-body">
+		
+			<p>{{ 'TRANSLATE.TIME' | translate }}</p>
+	
+			<span class="glyphicon glyphicon-time"></span>
+			{{currentTime | date:'medium'}}
+			
+		</div>
+	</section>
+</div>
+

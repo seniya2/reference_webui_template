@@ -43,24 +43,22 @@
 			
 			try {
 				
-				$translate(['setting_network_ui'
-				            ,'setting_network_rest'
-				            ,'CRUD_create_success'
-				            ,'CRUD_create_fail'
-				            ,'CRUD_update_success'
-				            ,'CRUD_update_fail'
-				            ,'CRUD_delete_success'
-				            ,'CRUD_delete_fail']).then(function (translations) {
+				$translate(['APP.CREATE_SUCCESS'
+				            ,'APP.CREATE_FAIL'
+				            ,'APP.UPDATE_SUCCESS'
+				            ,'APP.UPDATE_FAIL'
+				            ,'APP.DELETE_SUCCESS'
+				            ,'APP.DELETE_FAIL']).then(function (translations) {
 				            	
-			            	$scope.baseUIUrl = translations.setting_network_ui;
-			            	$scope.baseRestUrl = translations.setting_network_rest;			
+			            	$scope.baseUIUrl = "http://localhost:8080/";
+			            	$scope.baseRestUrl = "http://localhost:8080/";			
 			            	$scope.entityUrl = $scope.baseRestUrl+entityName;
-			            	$scope.msg.create_success = translations.CRUD_create_success;
-			            	$scope.msg.create_fail = translations.CRUD_create_fail;
-							$scope.msg.update_success = translations.CRUD_update_success;
-							$scope.msg.update_fail = translations.CRUD_update_fail;
-							$scope.msg.delete_success = translations.CRUD_delete_success;
-							$scope.msg.delete_fail = translations.CRUD_delete_fail;							
+			            	//$scope.msg.create_success = translations.APP.CREATE_SUCCESS;
+			            	//$scope.msg.create_fail = translations.APP.CREATE_FAIL;
+							//$scope.msg.update_success = translations.APP.UPDATE_SUCCESS;
+							//$scope.msg.update_fail = translations.APP.UPDATE_FAIL;
+							//$scope.msg.delete_success = translations.APP.DELETE_SUCCESS;
+							//$scope.msg.delete_fail = translations.APP.DELETE_FAIL;							
 							
 							$scope.currentPerson = new Person();
 							$scope.personPage = new PersonPage(20, 0, 0, 0, 1, 0);

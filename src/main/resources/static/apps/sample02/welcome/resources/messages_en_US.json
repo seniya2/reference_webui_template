@@ -1,0 +1,9 @@
+{
+	"WELCOME.TITLE" : "WELCOME",	
+	"WELCOME.MENU.DESC" : "Desc",
+	"WELCOME.MENU.FUNCTION" : "Function",
+	"WELCOME.MSG_POPUP" : "Message popup",
+	"WELCOME.MSG_CALL" : "Message call",
+	"WELCOME.MSG_CALL2" : "Message call2",
+	"WELCOME.BLOCKING_POPUP" : "Blocking popup"
+}
