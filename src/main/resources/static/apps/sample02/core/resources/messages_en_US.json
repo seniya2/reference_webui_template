@@ -15,6 +15,9 @@
 	"APP.DELETE" : "Delete",
 	"APP.EDIT" : "Edit",	
 	"APP.CANCEL" : "Cancel",
-	"APP.SAVE" : "Save"
+	"APP.SAVE" : "Save",
+	
+	"APP.YES" : "Yes",
+	"APP.NO" : "No"
 	
 }

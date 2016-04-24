@@ -44,7 +44,7 @@
         }    
         
     angular.module('singApp').run(function runnalbeFn(confirmationPopoverDefaults) {
-		confirmationPopoverDefaults.templateUrl = '../scripts2/angular-bootstrap-confirm-master/src/angular-bootstrap-confirm.html';
+		confirmationPopoverDefaults.templateUrl = '../../scripts2/angular-bootstrap-confirm-master/src/angular-bootstrap-confirm.html';
 	});
     
     angular.module('singApp').constant('property', property);

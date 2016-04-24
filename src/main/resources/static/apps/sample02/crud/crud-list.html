@@ -2,14 +2,14 @@
 	<section class="widget">
 		<header>
 			<h4>
-				<span class="fw-semi-bold">{{"CRUD.list_title" | translate}}</span>
+				<span class="fw-semi-bold">{{"CRUD.LIST_TITLE" | translate}}</span>
 			</h4>
 		</header>
 		<div class="widget-body">
 		
 			<div class="clearfix">
 				<div class="pull-right">
-					<button class="btn btn-primary btn-rounded" ng-click="createForm()">{{"CRUD.list_new" | translate}}</button>
+					<button class="btn btn-primary btn-rounded" ng-click="createForm()">{{"CRUD.LIST_NEW" | translate}}</button>
 				</div>
 			</div>
 
@@ -19,16 +19,16 @@
 					<tr>
 						<th class="text-center" 
 							ng-class="personSearch.sortAttr == 'id' ? (personSearch.sortOder == 'desc' ? 'sorting_desc' : 'sorting_asc') : 'sorting'"  
-							ng-click="read(personPage, personSearch, 'id')">{{"CRUD.list_seq" | translate}}</th>
+							ng-click="read(personPage, personSearch, 'id')">{{"CRUD.LIST_SEQ" | translate}}</th>
 						<th class="text-center" 
 							ng-class="personSearch.sortAttr == 'name' ? (personSearch.sortOder == 'desc' ? 'sorting_desc' : 'sorting_asc') : 'sorting'"
-							ng-click="read(personPage, personSearch, 'name')">{{"CRUD.list_name" | translate}}</th>						
+							ng-click="read(personPage, personSearch, 'name')">{{"CRUD.LIST_NAME" | translate}}</th>						
 						<th class="text-center" 
 							ng-class="personSearch.sortAttr == 'gender' ? (personSearch.sortOder == 'desc' ? 'sorting_desc' : 'sorting_asc') : 'sorting'"
-							ng-click="read(personPage, personSearch, 'gender')">{{"CRUD.list_gender" | translate}}</th>
-						<th class="hidden-xs text-center">{{"CRUD.list_birth" | translate}}</th>
-						<th class="hidden-xs text-center">{{"CRUD.list_email" | translate}}</th>
-						<th class="hidden-xs text-center">{{"CRUD.list_edit" | translate}}</th>
+							ng-click="read(personPage, personSearch, 'gender')">{{"CRUD.LIST_GENDER" | translate}}</th>
+						<th class="hidden-xs text-center">{{"CRUD.LIST_BIRTH" | translate}}</th>
+						<th class="hidden-xs text-center">{{"CRUD.LIST_EMAIL" | translate}}</th>
+						<th class="hidden-xs text-center">{{"CRUD.LIST_EDIT" | translate}}</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -43,19 +43,19 @@
 							<button
 								class="btn btn-xs btn-primary"
 								mwl-confirm
-								title='{{"CRUD.delete_confirm" | translate}}'
-								message='{{"CRUD.delete_msg" | translate}}'
-								confirm-text='{{"view.global.yes" | translate}}'
-								cancel-text='{{"view.global.no" | translate}}'
+								title='{{"APP.DELETE.CONFIRM" | translate}}'
+								message='{{"APP.DELETE.MSG" | translate}}'
+								confirm-text='{{"APP.YES" | translate}}'
+								cancel-text='{{"APP.NO" | translate}}'
 								placement="top"
 								on-confirm="remove(person)"
 								on-cancel=""
 								confirm-button-type="primary"
 								cancel-button-type="inverse">
-								{{"CRUD.delete" | translate}}
+								{{"APP.DELETE" | translate}}
 							</button>
 							<button class="btn btn-xs btn-primary"
-								ng-click="updateForm(person)">{{"CRUD.edit" | translate}}</button>
+								ng-click="updateForm(person)">{{"APP.EDIT" | translate}}</button>
 						</td>
 					</tr>
 				</tbody>

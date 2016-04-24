@@ -12,8 +12,8 @@
 	appConfig.$inject = [ '$translateProvider', 'tmhDynamicLocaleProvider', 'property'];
 	function appConfig($translateProvider, tmhDynamicLocaleProvider, property) {
 
-		//console.log("appConfig -->");
-		//console.log(property.messageFiles);
+		console.log("appConfig -->");
+		console.log(property.messageFiles);
 		
 		$translateProvider.useMissingTranslationHandlerLog();
 		$translateProvider.useStaticFilesLoader({

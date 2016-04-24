@@ -37,39 +37,32 @@
 
 		var template_base = "crud/";
 		$scope.msg = {};
+		$scope.baseUIUrl = "http://localhost:8080/";
+    	$scope.baseRestUrl = "http://localhost:8080/";			
+    	$scope.entityUrl = $scope.baseRestUrl+entityName;
 		
 		$scope.initilize = function() {			
 			console.log("--> initilize");			
 			
+        	//$scope.msg.create_success = translations.APP.CREATE_SUCCESS;
+        	//$scope.msg.create_fail = translations.APP.CREATE_FAIL;
+			//$scope.msg.update_success = translations.APP.UPDATE_SUCCESS;
+			//$scope.msg.update_fail = translations.APP.UPDATE_FAIL;
+			//$scope.msg.delete_success = translations.APP.DELETE_SUCCESS;
+			//$scope.msg.delete_fail = translations.APP.DELETE_FAIL;							
+						
 			try {
 				
-				$translate(['APP.CREATE_SUCCESS'
-				            ,'APP.CREATE_FAIL'
-				            ,'APP.UPDATE_SUCCESS'
-				            ,'APP.UPDATE_FAIL'
-				            ,'APP.DELETE_SUCCESS'
-				            ,'APP.DELETE_FAIL']).then(function (translations) {
-				            	
-			            	$scope.baseUIUrl = "http://localhost:8080/";
-			            	$scope.baseRestUrl = "http://localhost:8080/";			
-			            	$scope.entityUrl = $scope.baseRestUrl+entityName;
-			            	//$scope.msg.create_success = translations.APP.CREATE_SUCCESS;
-			            	//$scope.msg.create_fail = translations.APP.CREATE_FAIL;
-							//$scope.msg.update_success = translations.APP.UPDATE_SUCCESS;
-							//$scope.msg.update_fail = translations.APP.UPDATE_FAIL;
-							//$scope.msg.delete_success = translations.APP.DELETE_SUCCESS;
-							//$scope.msg.delete_fail = translations.APP.DELETE_FAIL;							
-							
-							$scope.currentPerson = new Person();
-							$scope.personPage = new PersonPage(20, 0, 0, 0, 1, 0);
-							$scope.personSearch = new PersonSearch("id", "desc", null, null);
-							$scope.template = template_base + "crud-list.html";	
-							$scope.read($scope.personPage, $scope.personSearch);
-				});								
+				$scope.currentPerson = new Person();
+				$scope.personPage = new PersonPage(20, 0, 0, 0, 1, 0);
+				$scope.personSearch = new PersonSearch("id", "desc", null, null);
+				$scope.template = template_base + "crud-list.html";	
+				$scope.read($scope.personPage, $scope.personSearch);							
 				
 			} catch (e) {
 				console.log("initilize error : " + e);
-			}			
+			}		
+			
 		}
 				
 		$scope.read = function(personPage, personSearch, attr, newPageNumber) {
@@ -226,7 +219,7 @@
 		
 		$scope.success = function(data, type) {
 			//$scope.disableScreen(false);
-			$rootScope.$broadcast("app.disableScreen", false);
+			$rootScope.$broadcast("app.blockingPopup", false);
 			if (type == "LIST") {
 				$scope.people = data._embedded.person;
 				$scope.personPage = new PersonPage(data.page.size, data.page.totalElements, data.page.totalPages, data.page.number, data.page.number+1, data.page.number);		
@@ -251,7 +244,7 @@
 		
 		$scope.error = function(error, type) {
 			//$scope.disableScreen(false);
-			$rootScope.$broadcast("app.disableScreen", false);
+			$rootScope.$broadcast("app.blockingPopup", false);
 			if (type == "LIST") {				
 				console.log("$http error : " + error);
 			} else if (type == "CREATE") {
