@@ -8,7 +8,8 @@
         'tmh.dynamicLocale',// angular-dynamic-locale
         
         'singApp.core',
-        'singApp.welcome'
+        'singApp.welcome',
+        'singApp.apple'
     ]);
     
        
@@ -16,6 +17,9 @@
     	modules : [{
             name: 'WELCOME',
             url: 'app.welcome'
+        },{
+            name: 'APPLE',
+            url: 'app.apple'
         }],
     	messageFiles : [{
             prefix: 'core/resources/messages_',
@@ -23,11 +27,14 @@
         },{
             prefix: 'welcome/resources/messages_',
             suffix: '.json'
+        },{
+            prefix: 'apple/resources/messages_',
+            suffix: '.json'
         }]
     }    
     
     angular.module('singApp').run(function runnalbeFn(confirmationPopoverDefaults) {
-		confirmationPopoverDefaults.templateUrl = '../scripts2/angular-bootstrap-confirm-master/src/angular-bootstrap-confirm.html';
+		confirmationPopoverDefaults.templateUrl = '../../scripts2/angular-bootstrap-confirm-master/src/angular-bootstrap-confirm.html';
 	});
     
     angular.module('singApp').constant('property', property);

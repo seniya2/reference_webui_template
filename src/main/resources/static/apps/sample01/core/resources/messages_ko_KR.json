@@ -15,6 +15,11 @@
 	"APP.DELETE" : "삭제",
 	"APP.EDIT" : "수정",	
 	"APP.CANCEL" : "취소",
-	"APP.SAVE" : "저장"
+	"APP.SAVE" : "저장",
+	
+	"APP.YES" : "예",
+	"APP.NO" : "아니오",
+	
+	"APP.EDIT.REQUIRED" : "필수 입력사항입니다."
 	
 }

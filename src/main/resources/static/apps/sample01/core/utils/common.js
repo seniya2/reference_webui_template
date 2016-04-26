@@ -9,7 +9,7 @@
 		$scope.modules = property.modules;
 
 		$scope.$on("app.massagePopup", function(event, object) {
-			
+			console.log("--> app.massagePopup : " + object.messageValue);
 			if (object.messageValue == null) {
 				
 				$translate([object.messageKey]).then(function (translations) {
@@ -41,7 +41,7 @@
 		});
 		
 		$scope.$on("app.blockingPopup", function(event, enable) {
-			//console.log("--> disableScreen : " + enable);
+			console.log("--> app.blockingPopup : " + enable);
 			if (enable) {
 				$scope.app.globalDisable = enable;
 				usSpinnerService.spin('app-spinner');
