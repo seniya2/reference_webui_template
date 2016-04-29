@@ -9,6 +9,18 @@
 			'preferredLocale' : 'ko_KR'
 	}
 
+	
+	
+	testCntr.$inject = [ '$scope', '$translate', '$rootScope', 'usSpinnerService', '$timeout', 'property' ];
+	function testCntr($scope, $translate, $rootScope, usSpinnerService, $timeout, property) {
+		
+		$scope.$on("app.massagePopup", function(event, object) {
+			
+		});
+		
+	}
+	
+	
 	appConfig.$inject = [ '$translateProvider', 'tmhDynamicLocaleProvider', 'property'];
 	function appConfig($translateProvider, tmhDynamicLocaleProvider, property) {
 

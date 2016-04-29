@@ -16,7 +16,7 @@
 							<label class="control-label col-sm-3" for="name1"><strong>name1</strong></label>
 							<div class="col-sm-9">
 								<input type="text" id="name1" name="name1" class="form-control"
-									ng-model="entity.name1" 
+									ng-model="itemResource.name1" 
 									required="required"
 									ng-minlength="1">
 								<ul ng-show="!editForm.name1.$valid" class="parsley-errors-list filled"><li class="parsley-required">{{"APP.EDIT.REQUIRED" | translate}}</li></ul>
@@ -25,31 +25,31 @@
 						<div class="form-group">
 							<label class="control-label col-sm-3" for="name2"><strong>name2</strong></label>
 							<div class="col-sm-9">
-								<input type="text" id="name2" name="name2" class="form-control"	ng-model="entity.name2">
+								<input type="text" id="name2" name="name2" class="form-control"	ng-model="itemResource.name2">
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="control-label col-sm-3" for="name3"><strong>name3</strong></label>
 							<div class="col-sm-9">
-								<input type="text" id="name3" name="name3" class="form-control"	ng-model="entity.name3">
+								<input type="text" id="name3" name="name3" class="form-control"	ng-model="itemResource.name3">
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="control-label col-sm-3" for="value1"><strong>Value1</strong></label>
 							<div class="col-sm-9">
-								<input type="text" id="value1" name="value1" class="form-control" ng-model="entity.value1">
+								<input type="text" id="value1" name="value1" class="form-control" ng-model="itemResource.value1">
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="control-label col-sm-3" for="value2"><strong>Value2</strong></label>
 							<div class="col-sm-9">
-								<input type="text" id="value2" name="value2" class="form-control" ng-model="entity.value2">
+								<input type="text" id="value2" name="value2" class="form-control" ng-model="itemResource.value2">
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="control-label col-sm-3" for="value3"><strong>Value3</strong></label>
 							<div class="col-sm-9">
-								<input type="text" id="value3" name="value3" class="form-control" ng-model="entity.value3">
+								<input type="text" id="value3" name="value3" class="form-control" ng-model="itemResource.value3">
 							</div>
 						</div>
 					</fieldset>
@@ -57,11 +57,7 @@
 					
 					<div class="form-actions">
 						<button type="button" class="btn btn-primary btn-rounded pull-right" 
-							ng-click="create(entity, editForm.$valid)"
-							ng-show="entity._links == undfined">{{"APP.SAVE" | translate}}</button>
-						<button type="button" class="btn btn-primary btn-rounded pull-right" 
-							ng-click="update(entity, editForm.$valid)"
-							ng-show="entity._links != undfined">{{"APP.SAVE" | translate}}</button>
+							ng-click="edit(editForm.$valid)">{{"APP.SAVE" | translate}}</button>
 			            <span class="btn btn-default btn-rounded" ng-click="cancel()">{{"APP.CANCEL" | translate}}</span>
 					</div>
 					

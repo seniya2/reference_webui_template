@@ -14,8 +14,8 @@
 			window.alert("world");
 		}
 		
-		$scope.sendMsg = function() {
-			$rootScope.$broadcast("app.massagePopup", {"messageKey" : "CRUD_create_success", "messageType" : "success"});
+		$scope.sendMssenger = function() {
+			$rootScope.$broadcast("app.massagePopup", {"messageKey" : "WELCOME.MSG_CALL", "messageType" : "success"});
 		}
 		
 		$scope.sendMsg2 = function(msg) {

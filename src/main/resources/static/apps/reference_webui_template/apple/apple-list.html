@@ -1,0 +1,76 @@
+<div class="col-md-12">
+	<section class="widget">
+		<header>
+			<h4>
+				<span class="fw-semi-bold">LIST</span>
+			</h4>
+		</header>
+		<div class="widget-body">
+		
+			<div class="clearfix">
+				<div class="pull-right">
+					<button class="btn btn-primary btn-rounded" ng-click="editForm()">NEW</button>
+				</div>
+			</div>
+						
+			<table
+				class="table table-hover table-lg mt-lg mb-0 margin_top_30">
+				<thead>
+					<tr>
+						<th class="text-center"
+						ng-class="(search.sort == 'name1,asc') || (search.sort == 'name1,desc') ? (search.sort == 'name1,asc' ? 'sorting_asc' : 'sorting_desc') : 'sorting'"
+						ng-click="search.sort == 'name1,asc' ? search.sort = 'name1,desc' : search.sort = 'name1,asc'; readAll();">name1</th>
+						<th class="text-center"
+						ng-class="(search.sort == 'name2,asc') || (search.sort == 'name2,desc') ? (search.sort == 'name2,asc' ? 'sorting_asc' : 'sorting_desc') : 'sorting'"
+						ng-click="search.sort == 'name2,asc' ? search.sort = 'name2,desc' : search.sort = 'name2,asc'; readAll();">name2</th>
+						<th class="text-center"
+						ng-class="(search.sort == 'name3,asc') || (search.sort == 'name3,desc') ? (search.sort == 'name3,asc' ? 'sorting_asc' : 'sorting_desc') : 'sorting'"
+						ng-click="search.sort == 'name3,asc' ? search.sort = 'name3,desc' : search.sort = 'name3,asc'; readAll();">name3</th>
+						<th class="text-center"
+						ng-class="(search.sort == 'value1,asc') || (search.sort == 'value1,desc') ? (search.sort == 'value1,asc' ? 'sorting_asc' : 'sorting_desc') : 'sorting'"
+						ng-click="search.sort == 'value1,asc' ? search.sort = 'value1,desc' : search.sort = 'value1,asc'; readAll();">value1</th>
+						<th class="text-center"
+						ng-class="(search.sort == 'value2,asc') || (search.sort == 'value2,desc') ? (search.sort == 'value2,asc' ? 'sorting_asc' : 'sorting_desc') : 'sorting'"
+						ng-click="search.sort == 'value2,asc' ? search.sort = 'value2,desc' : search.sort = 'value2,asc'; readAll();">value2</th>
+						<th class="text-center"
+						ng-class="(search.sort == 'value3,asc') || (search.sort == 'value3,desc') ? (search.sort == 'value3,asc' ? 'sorting_asc' : 'sorting_desc') : 'sorting'"
+						ng-click="search.sort == 'value3,asc' ? search.sort = 'value3,desc' : search.sort = 'value3,asc'; readAll();">value3</th>
+						<th class="hidden-xs text-center">Modify</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr dir-paginate="entity in collectionResource._embedded.apple | itemsPerPage: collectionResource.page.size"
+						total-items="collectionResource.page.totalElements" current-page="search.currentPage">
+						<td class="text-center"><a ng-click="read(entity)">{{entity.name1}}</a></td>
+						<td class="text-center">{{entity.name2}}</a></td>						
+						<td class="text-center">{{entity.name3}}</td>
+						<td class="hidden-xs text-center">{{entity.value1}}</td>
+						<td class="hidden-xs text-center">{{entity.value2}}</td>	
+						<td class="hidden-xs text-center">{{entity.value3}}</td>											
+						<td class="hidden-xs text-center">
+							<button
+								class="btn btn-xs btn-primary"
+								mwl-confirm
+								title='{{"APP.DELETE.CONFIRM" | translate}}'
+								message='{{"APP.DELETE.MSG" | translate}}'
+								confirm-text='{{"APP.YES" | translate}}'
+								cancel-text='{{"APP.NO" | translate}}'
+								placement="top"
+								on-confirm="remove(entity)"
+								on-cancel=""
+								confirm-button-type="primary"
+								cancel-button-type="inverse">
+								{{"APP.DELETE" | translate}}
+							</button>
+							<button class="btn btn-xs btn-primary"
+								ng-click="editForm(entity)">{{"APP.EDIT" | translate}}</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="clearfix text-center">				
+				<dir-pagination-controls on-page-change="search.page = newPageNumber-1; readAll();"></dir-pagination-controls>
+			</div>
+		</div>
+	</section>
+</div>

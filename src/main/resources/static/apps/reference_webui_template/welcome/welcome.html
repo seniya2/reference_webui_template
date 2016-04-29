@@ -19,15 +19,15 @@
 				<tbody>
 					<tr>
 						<td class="text-center">{{ 'WELCOME.MSG_POPUP' | translate }}</td>
-						<td class="text-center"><button ng-click="world()">world</button></td>
+						<td class="text-center"><button ng-click="world()">window.alert("world");</button></td>
 					</tr>
 					<tr>
 						<td class="text-center">{{ 'WELCOME.MSG_CALL' | translate }}</td>
-						<td class="text-center"><button ng-click="sendMsg()">sendMsg()</button></td>
+						<td class="text-center"><button ng-click="sendMssenger()">sendMssenger("WELCOME.MSG_CALL")</button></td>
 					</tr>
 					<tr>
 						<td class="text-center">{{ 'WELCOME.MSG_CALL2' | translate }}</td>
-						<td class="text-center"><button ng-click="sendMsg2('aaaaaaa')">sendMsg2()</button></td>
+						<td class="text-center"><button ng-click="sendMsg2('sample text')">sendMsg2("sample text")</button></td>
 					</tr>
 					<tr>
 						<td class="text-center">{{ 'WELCOME.BLOCKING_POPUP' | translate }}</td>

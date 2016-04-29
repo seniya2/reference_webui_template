@@ -1,4 +1,4 @@
-package io.github.seniya2.apple;
+package reference_webui_template.apple;
 
 import java.io.Serializable;
 

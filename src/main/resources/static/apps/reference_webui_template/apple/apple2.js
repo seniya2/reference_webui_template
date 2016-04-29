@@ -28,6 +28,8 @@
 				console.log("initilize error : " + e);
 			}
 		}
+		
+		
 				
 		$scope.read = function(page) {
 			console.log("--> read ");

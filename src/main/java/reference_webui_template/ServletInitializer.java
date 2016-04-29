@@ -1,4 +1,4 @@
-package io.github.seniya2;
+package reference_webui_template;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
