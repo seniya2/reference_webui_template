@@ -15,7 +15,8 @@
 </head>
 <body ng-controller="App" sn-demo="" ng-class="{'nav-static': app.state['nav-static'], 'login-page': $state.is('login'), 'error-page': $state.is('error')}">
 <div ng-controller="commonCntr" class="custom-overray" ng-show="app.globalDisable"></div>
-
+<div ng-controller="messageCntr"></div>
+<div ng-controller="indexController"></div>
 <!--[if lt IE 10]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
@@ -129,6 +130,7 @@
 	<script type="text/javascript" src="core/utils/utils.js"></script>	
 	<script type="text/javascript" src="core/navigation/navigation.js"></script>
 	<script type="text/javascript" src="core/utils/common.js"></script>
+	
 	<script type="text/javascript" src="welcome/welcome.module.js"></script>
 	<script type="text/javascript" src="welcome/welcome.js"></script>
 	<script type="text/javascript" src="apple/apple.module.js"></script>

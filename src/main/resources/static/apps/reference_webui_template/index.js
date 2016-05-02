@@ -33,10 +33,19 @@
         }]
     }    
     
+    
+    indexController.$inject = [ '$scope', '$rootScope'];
+	function indexController($scope, $rootScope) {
+		console.log("indexController -->");
+		$rootScope.property = property;
+		$rootScope.$broadcast("app.massageProperty", true);
+	}
+    
     angular.module('singApp').run(function runnalbeFn(confirmationPopoverDefaults) {
 		confirmationPopoverDefaults.templateUrl = '../../scripts2/angular-bootstrap-confirm-master/src/angular-bootstrap-confirm.html';
 	});
     
     angular.module('singApp').constant('property', property);
+    angular.module('singApp').controller('indexController', indexController);
     
 })();

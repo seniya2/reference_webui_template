@@ -11,27 +11,36 @@
 
 	
 	
-	testCntr.$inject = [ '$scope', '$translate', '$rootScope', 'usSpinnerService', '$timeout', 'property' ];
-	function testCntr($scope, $translate, $rootScope, usSpinnerService, $timeout, property) {
-		
-		$scope.$on("app.massagePopup", function(event, object) {
+	messageCntr.$inject = [ '$scope', '$translate', '$rootScope', 'property'];
+	function messageCntr($scope, $translate, $rootScope, property) {
+		console.log("messageCntr -->");
+		$scope.$on("app.massageProperty", function(event, object) {
+			console.log("massageProperty() -->");
+			/*
+			$translate.useStaticFilesLoader({
+				files: property.messageFiles
+			});
+			*/
+			console.log(property.messageFiles);
 			
+			angular.module('singApp').config(appConfig);
 		});
 		
 	}
 	
 	
 	appConfig.$inject = [ '$translateProvider', 'tmhDynamicLocaleProvider', 'property'];
-	function appConfig($translateProvider, tmhDynamicLocaleProvider, property) {
+	function appConfig($translateProvider, tmhDynamicLocaleProvider, property ) {
 
-		//console.log("appConfig -->");
-		//console.log(property.messageFiles);
+		console.log("appConfig -->");
+		//console.log($rootScope.property.messageFiles);
 		
 		$translateProvider.useMissingTranslationHandlerLog();
+		
 		$translateProvider.useStaticFilesLoader({
 			files: property.messageFiles
 		});
-
+		
 		$translateProvider.preferredLanguage('en_US');
 		$translateProvider.useLocalStorage();
 		$translateProvider.useSanitizeValueStrategy(null);
@@ -117,5 +126,6 @@
 	angular.module('singApp').constant('LOCALES', locales);
 	angular.module('singApp').service('LocaleService',LocaleService);
 	angular.module('singApp').directive('ngTranslateLanguageSelect', ngTranslateLanguageSelect);
+	angular.module('singApp').controller('messageCntr', messageCntr);
 	
 })();

@@ -2,8 +2,8 @@
 	"WELCOME.TITLE" : "WELCOME",
 	"WELCOME.MENU.DESC" : "설명",
 	"WELCOME.MENU.FUNCTION" : "기능",
-	"WELCOME.MSG_POPUP" : "메세지 팝업",
-	"WELCOME.MSG_CALL" : "메세지 호출",
-	"WELCOME.MSG_CALL2" : "메세지 호출",
-	"WELCOME.BLOCKING_POPUP" : "블로킹 팝업"	
+	"WELCOME.MSG_POPUP" : "메세지 팝업 : javascript 기본 api alert()",
+	"WELCOME.MSG_CALL" : "메세지 호출 : Massenger LIB + 다국어 메세지",
+	"WELCOME.MSG_CALL2" : "메세지 호출 : Massenger LIB + 사용자 메세지",
+	"WELCOME.BLOCKING_POPUP" : "블로킹 팝업 : 전체화면 disable"	
 }

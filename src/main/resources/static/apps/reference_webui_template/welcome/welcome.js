@@ -5,10 +5,6 @@
 	function welcomeController($scope, $rootScope, $translate) {
 
 		console.log("welcomeController -->");
-		//console.log(scriptMsg.getMsg());
-		//console.log(scriptMsg.getMsg().$$state);
-		
-		$scope.hello = "hello";
 
 		$scope.world = function() {
 			window.alert("world");
@@ -18,8 +14,8 @@
 			$rootScope.$broadcast("app.massagePopup", {"messageKey" : "WELCOME.MSG_CALL", "messageType" : "success"});
 		}
 		
-		$scope.sendMsg2 = function(msg) {
-			$rootScope.$broadcast("app.massagePopup", {"messageValue" : msg, "messageType" : "success"});
+		$scope.sendMssenger2 = function(msg) {
+			$rootScope.$broadcast("app.massagePopup", {"messageKey" : msg, "messageType" : "success"});
 		}
 		
 		$scope.blockingPopup = function (enable) {
