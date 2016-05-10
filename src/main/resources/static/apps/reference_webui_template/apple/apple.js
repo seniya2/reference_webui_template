@@ -7,12 +7,12 @@
 		
 		$scope.collectionResource = null;
 		$scope.itemResource = null;
-		$scope.search = {"page" : null, "size" : 5, "sort" : null, "currentPage" : 1};
+		$scope.search = {"page" : null, "size" : 5, "sort" : [], "currentPage" : 1};
 				
 		
 		$scope.initilize = function() {			
 			console.log("--> initilize");			
-			$scope.readAll({});
+			$scope.readAll();
 		}
 		
 		
@@ -24,6 +24,43 @@
 			$rootScope.$broadcast("app.blockingPopup", false);
 			$scope.template = template;
 		}
+		
+		$scope.getSortClass = function(name) {
+			for (var i=0; i<$scope.search.sort.length; i++) {			
+				if($scope.search.sort[i].indexOf(name+",asc") > -1) {
+					return "sorting_asc";
+				} else if($scope.search.sort[i].indexOf(name+",desc") > -1) {
+					return "sorting_desc";
+				} else if($scope.search.sort[i].indexOf(name+",null") > -1){
+					return "sorting";
+				}
+			}			
+			return "sorting";
+		}		
+		
+		$scope.sortHandle = function(name) {			
+			for (var i=0; i<$scope.search.sort.length; i++) {			
+				if($scope.search.sort[i].indexOf(name+",asc") > -1) {					
+					$scope.search.sort[i] = name+",desc";
+					console.log($scope.search.sort);
+					$scope.readAll();
+					return;
+				} else if($scope.search.sort[i].indexOf(name+",desc") > -1) {					
+					$scope.search.sort[i] = name+",null";
+					console.log($scope.search.sort);
+					$scope.readAll();
+					return;
+				} else if($scope.search.sort[i].indexOf(name+",null") > -1){					
+					$scope.search.sort[i] = name+",asc";
+					console.log($scope.search.sort);
+					$scope.readAll();
+					return;
+				}
+			}			
+			$scope.search.sort.push(name+",asc");
+			console.log($scope.search.sort);
+			$scope.readAll();
+		}
     	
     	
 		$scope.readAll = function() {
@@ -31,10 +68,26 @@
 			
 			$scope.preHandle();
 			
+			var sort = [];
+			
+			for (var i=0; i<$scope.search.sort.length; i++) {
+				if($scope.search.sort[i].indexOf("null") == -1) {					
+					sort.push($scope.search.sort[i]);
+				}
+			}
+						
+			var params = {
+					"page" : $scope.search.page, 
+					"size" : $scope.search.size, 
+					"sort" : sort
+			};
+			
+			console.log(params);
+			
 			$http({						
 				method : 'GET',
 				url : "/apple",
-				params : $scope.search				
+				params : params		
 			}).success(function(d, a, b, c) {
 				$log.debug("["+c.method+"] " + c.url + " " + a);
 				$scope.search.currentPage = d.page.number +1;
