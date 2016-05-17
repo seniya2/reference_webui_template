@@ -9,7 +9,10 @@
         
         'singApp.core',
         'singApp.welcome',
-        'singApp.apple'
+        'singApp.apple',
+        'singApp.blog',
+        'singApp.position',
+        'singApp.employee'
     ]);
     
        
@@ -20,7 +23,16 @@
         },{
             name: 'APPLE',
             url: 'app.apple'
-        }],
+        },{
+            name: 'BLOG',
+            url: 'app.blog'
+        },{
+            name: 'POSITION',
+            url: 'app.position'
+        },{
+            name: 'EMPLOYEE',
+            url: 'app.employee'
+        },],
     	messageFiles : [{
             prefix: 'core/resources/messages_',
             suffix: '.json'
@@ -29,6 +41,15 @@
             suffix: '.json'
         },{
             prefix: 'apple/resources/messages_',
+            suffix: '.json'
+        },{
+            prefix: 'blog/resources/messages_',
+            suffix: '.json'
+        },{
+            prefix: 'position/resources/messages_',
+            suffix: '.json'
+        },{
+            prefix: 'employee/resources/messages_',
             suffix: '.json'
         }]
     }    
