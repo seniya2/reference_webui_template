@@ -48,6 +48,10 @@
             <artifactId>spring-data-rest-hal-browser</artifactId>
         </dependency>       
         <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+        </dependency>       
+        <dependency>
             <groupId>io.github.u2ware</groupId>
             <artifactId>spring-data-rest-u2ware-browser</artifactId>
             <version>1.0.0</version>
