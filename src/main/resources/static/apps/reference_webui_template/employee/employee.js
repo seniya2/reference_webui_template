@@ -3,16 +3,29 @@
 
 	employeeController.$inject = ['$scope', '$rootScope', '$resource', '$http', 'usSpinnerService', "$log" ];
 	function employeeController($scope, $rootScope, $resource, $http, usSpinnerService, $log) {
-		
-		
+				
 		$scope.collectionResource = null;
 		$scope.itemResource = null;
+		$scope.positionData = null;
 		$scope.search = {"page" : null, "size" : 5, "sort" : [], "currentPage" : 1};
-				
 		
 		$scope.initilize = function() {			
 			console.log("--> initilize");			
+			$scope.readPositionData();
 			$scope.readAll();
+		}
+		
+		$scope.readPositionData = function() {			
+			$http({						
+				method : 'GET',
+				url : "/position"
+			}).success(function(d, a, b, c) {
+				$log.debug("["+c.method+"] " + c.url + " " + a);
+				$scope.positionData = d._embedded.position;
+				$log.debug($scope.positionData);
+			}).error(function(e) {	
+				$scope.postHandle("employee/employee-error.html");
+			});				
 		}
 		
 		

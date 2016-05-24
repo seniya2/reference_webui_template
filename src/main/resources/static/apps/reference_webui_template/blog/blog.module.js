@@ -1,7 +1,9 @@
 (function() {
 	'use strict';
 
-	var module = angular.module('singApp.blog', [ 'ui.router', 'angularUtils.directives.dirPagination' ]);
+	var module = angular.module('singApp.blog', [ 'ui.router'
+	                                              , 'angularUtils.directives.dirPagination'
+	                                              , 'angularFileUpload']);
 
 	appConfig.$inject = [ '$stateProvider' ];
 

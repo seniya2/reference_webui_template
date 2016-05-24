@@ -16,61 +16,25 @@
 			<table
 				class="table table-hover table-lg mt-lg mb-0 margin_top_30">
 				<thead>
-					<tr>
-					
-						<!-- 
+					<tr>						
 						<th class="text-center"
-							ng-class="(search.sort == 'name1,asc') || (search.sort == 'name1,desc') ? (search.sort == 'name1,asc' ? 'sorting_asc' : 'sorting_desc') : 'sorting'"
-							ng-click="search.sort == 'name1,asc' ? search.sort = 'name1,desc' : search.sort = 'name1,asc'; readAll();">name1</th>
+							ng-class="getSortClass('name')"
+							ng-click="sortHandle('name')">name</th>							
 						<th class="text-center"
-							ng-class="(search.sort == 'name2,asc') || (search.sort == 'name2,desc') ? (search.sort == 'name2,asc' ? 'sorting_asc' : 'sorting_desc') : 'sorting'"
-							ng-click="search.sort == 'name2,asc' ? search.sort = 'name2,desc' : search.sort = 'name2,asc'; readAll();">name2</th>
+							ng-class="getSortClass('date')"
+							ng-click="sortHandle('date')">date</th>
 						<th class="text-center"
-							ng-class="(search.sort == 'name3,asc') || (search.sort == 'name3,desc') ? (search.sort == 'name3,asc' ? 'sorting_asc' : 'sorting_desc') : 'sorting'"
-							ng-click="search.sort == 'name3,asc' ? search.sort = 'name3,desc' : search.sort = 'name3,asc'; readAll();">name3</th>
-						<th class="text-center"
-							ng-class="(search.sort == 'value1,asc') || (search.sort == 'value1,desc') ? (search.sort == 'value1,asc' ? 'sorting_asc' : 'sorting_desc') : 'sorting'"
-							ng-click="search.sort == 'value1,asc' ? search.sort = 'value1,desc' : search.sort = 'value1,asc'; readAll();">value1</th>
-						<th class="text-center"
-							ng-class="(search.sort == 'value2,asc') || (search.sort == 'value2,desc') ? (search.sort == 'value2,asc' ? 'sorting_asc' : 'sorting_desc') : 'sorting'"
-							ng-click="search.sort == 'value2,asc' ? search.sort = 'value2,desc' : search.sort = 'value2,asc'; readAll();">value2</th>
-						<th class="text-center"
-							ng-class="(search.sort == 'value3,asc') || (search.sort == 'value3,desc') ? (search.sort == 'value3,asc' ? 'sorting_asc' : 'sorting_desc') : 'sorting'"
-							ng-click="search.sort == 'value3,asc' ? search.sort = 'value3,desc' : search.sort = 'value3,asc'; readAll();">value3</th>
-						<th class="hidden-xs text-center">Modify</th>
-						
-						-->
-						
-						<th class="text-center"
-							ng-class="getSortClass('name1')"
-							ng-click="sortHandle('name1')">name1</th>							
-						<th class="text-center"
-							ng-class="getSortClass('name2')"
-							ng-click="sortHandle('name2')">name2</th>
-						<th class="text-center"
-							ng-class="getSortClass('name3')"
-							ng-click="sortHandle('name3')">name3</th>
-						<th class="text-center"
-							ng-class="getSortClass('value1')"
-							ng-click="sortHandle('value1')">value1</th>
-						<th class="text-center"
-							ng-class="getSortClass('value2')"
-							ng-click="sortHandle('value2')">value2</th>
-						<th class="text-center"
-							ng-class="getSortClass('value3')"
-							ng-click="sortHandle('value3')">value3</th>
+							ng-class="getSortClass('description')"
+							ng-click="sortHandle('description')">description</th>
 						<th class="hidden-xs text-center">Modify</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr dir-paginate="entity in collectionResource._embedded.apple | itemsPerPage: collectionResource.page.size"
+					<tr dir-paginate="entity in collectionResource._embedded.position | itemsPerPage: collectionResource.page.size"
 						total-items="collectionResource.page.totalElements" current-page="search.currentPage">
-						<td class="text-center"><a ng-click="read(entity)">{{entity.name1}}</a></td>
-						<td class="text-center">{{entity.name2}}</a></td>						
-						<td class="text-center">{{entity.name3}}</td>
-						<td class="hidden-xs text-center">{{entity.value1}}</td>
-						<td class="hidden-xs text-center">{{entity.value2}}</td>	
-						<td class="hidden-xs text-center">{{entity.value3}}</td>											
+						<td class="text-center"><a ng-click="read(entity)">{{entity.name}}</a></td>						
+						<td class="text-center">{{entity.date}}</td>
+						<td class="hidden-xs text-center">{{entity.description}}</td>									
 						<td class="hidden-xs text-center">
 							<button
 								class="btn btn-xs btn-primary"

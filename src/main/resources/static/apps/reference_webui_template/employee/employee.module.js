@@ -1,7 +1,9 @@
 (function() {
 	'use strict';
 
-	var module = angular.module('singApp.employee', [ 'ui.router', 'angularUtils.directives.dirPagination' ]);
+	var module = angular.module('singApp.employee', [ 'ui.router'
+	                                                  , 'angularUtils.directives.dirPagination'
+	                                                  , 'angular-bootstrap-select']);
 
 	appConfig.$inject = [ '$stateProvider' ];
 
