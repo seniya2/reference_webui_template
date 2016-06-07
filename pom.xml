@@ -23,10 +23,17 @@
 		<java.version>1.7</java.version>
 	</properties>
 
+    <repositories>
+        <repository>
+            <id>u2ware-mvm-repo</id>
+            <url>https://raw.github.com/u2ware/u2ware.github.com/mvn-repo/</url>
+        </repository>
+    </repositories>
+
 	<dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-logging</artifactId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -36,20 +43,18 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-rest</artifactId>
         </dependency>
-
-       <dependency>
+        <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-rest-hal-browser</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-api</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>jcl-over-slf4j</artifactId>
-                </exclusion>
-            </exclusions>
+        </dependency>       
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+        </dependency>       
+        <dependency>
+            <groupId>io.github.u2ware</groupId>
+            <artifactId>spring-data-rest-u2ware-browser</artifactId>
+            <version>1.0.0</version>
         </dependency>
 
         <dependency>

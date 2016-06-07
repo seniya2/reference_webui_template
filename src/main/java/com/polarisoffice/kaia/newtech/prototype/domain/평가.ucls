@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.8" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true">  
+  <class id="1" language="java" name="com.polarisoffice.kaia.newtech.prototype.domain.신기술" 
+    project="reference_webui_template" 
+    file="/reference_webui_template/src/main/java/com/polarisoffice/kaia/newtech/prototype/domain/신기술.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="83" width="235" x="84" y="130"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="com.polarisoffice.kaia.newtech.prototype.domain.신기술인증" 
+    project="reference_webui_template" 
+    file="/reference_webui_template/src/main/java/com/polarisoffice/kaia/newtech/prototype/domain/신기술인증.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="83" width="235" x="495" y="215"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="com.polarisoffice.kaia.newtech.prototype.domain.평가" 
+    project="reference_webui_template" 
+    file="/reference_webui_template/src/main/java/com/polarisoffice/kaia/newtech/prototype/domain/평가.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="83" width="235" x="89" y="339"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="com.polarisoffice.kaia.newtech.prototype.domain.평가서" 
+    project="reference_webui_template" 
+    file="/reference_webui_template/src/main/java/com/polarisoffice/kaia/newtech/prototype/domain/평가서.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="83" width="235" x="553" y="349"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="com.polarisoffice.kaia.newtech.prototype.domain.평가서서식" 
+    project="reference_webui_template" 
+    file="/reference_webui_template/src/main/java/com/polarisoffice/kaia/newtech/prototype/domain/평가서서식.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="83" width="235" x="875" y="269"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="com.polarisoffice.kaia.newtech.prototype.domain.평가위원" 
+    project="reference_webui_template" 
+    file="/reference_webui_template/src/main/java/com/polarisoffice/kaia/newtech/prototype/domain/평가위원.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="119" width="235" x="337" y="488"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="com.polarisoffice.kaia.newtech.prototype.domain.평가위원회" 
+    project="reference_webui_template" 
+    file="/reference_webui_template/src/main/java/com/polarisoffice/kaia/newtech/prototype/domain/평가위원회.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="119" width="235" x="823" y="452"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
